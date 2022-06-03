@@ -13,7 +13,7 @@ Some test examples written with WebDriverInteractions and illustrating the simpl
 
 ## Branches
 
-### cucumber-serenity
+### main (cucumber & serenity)
 
 Using Webdriver Overload with:
 - cucumber tests
