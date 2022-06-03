@@ -4,12 +4,11 @@ import io.cucumber.java.DataTableType;
 import io.cucumber.java8.En;
 import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
-import io.github.simple4tests.webdriver.framework.serenity.SerenityReporter;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Shared;
-import net.thucydides.core.annotations.Steps;
+import io.github.simple4tests.webdriver.framework.DriverProvider;
+import io.github.simple4tests.webdriver.framework.ReporterSystemOut;
 import org.openqa.selenium.WebDriver;
 
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.Map;
 
@@ -17,14 +16,7 @@ import static io.github.simple4tests.ohrm.context.TestContext.context;
 
 public class MetaSteps implements En {
 
-    @Managed(driver = "provided")
     WebDriver driver;
-
-    @Steps
-    SerenityReporter reporter;
-
-    @Shared
-    Ohrm ohrm;
 
     public MetaSteps() {
 
@@ -38,22 +30,29 @@ public class MetaSteps implements En {
     }
 
     public void initDriverAndReporter() {
+
+        driver = DriverProvider.get(
+                System.getProperty("s4t.browser"),
+                Paths.get(System.getProperty("s4t.driverPath")),
+                System.getProperty("s4t.optionsAsYamlResource"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
-        reporter.clearErrors();
+
+        context().reporter = new ReporterSystemOut();
+        context().reporter.clearErrors();
     }
 
     public void initOhrmAutomaton() {
-        ohrm.init(driver, reporter, "DEMO");
+        context().ohrm = new Ohrm();
+        context().ohrm.init(driver, context().reporter, "DEMO");
     }
 
     public void initTestContext() {
-        context().reporter = reporter;
         context().username = "Admin";
         context().password = "admin123";
     }
 
     public void closeDriverAndReporter() {
-        ohrm.wdi.driver.quit();
+        context().ohrm.wdi.driver.quit();
         context().reporter.throwAssertionErrorIfAny(true);
     }
 

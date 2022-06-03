@@ -25,9 +25,8 @@
 
         <lombok.version>1.18.24</lombok.version>
         <slf4j.version>2.0.0-alpha6</slf4j.version>
-        <webdriver-overload.version>2.0.0-SNAPSHOT</webdriver-overload.version>
+        <webdriver-overload.version>2.0.0</webdriver-overload.version>
         <selenium.version>4.1.4</selenium.version>
-        <serenity.version>3.2.5</serenity.version>
         <cucumber.version>7.3.3</cucumber.version>
     </properties>
 
@@ -53,9 +52,9 @@
             <version>${selenium.version}</version>
         </dependency>
         <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber</artifactId>
-            <version>${serenity.version}</version>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -127,27 +126,6 @@
                         <goals>
                             <goal>integration-test</goal>
                             <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>net.serenity-bdd.maven.plugins</groupId>
-                <artifactId>serenity-maven-plugin</artifactId>
-                <version>${serenity.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-core</artifactId>
-                        <version>${serenity.version}</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>serenity-reports</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>aggregate</goal>
                         </goals>
                     </execution>
                 </executions>
