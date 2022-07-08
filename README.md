@@ -20,6 +20,7 @@ Using Webdriver Overload with:
 - serenity report including execution status, gherkin, steps details and screenshots (target/site/serenity/index.html)
 
 mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev_tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@blood_type
+
 mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev_tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@blood_type
 
 ### cucumber-systemout (cucumber tests, html pretty report & console)
@@ -30,6 +31,7 @@ Using Webdriver Overload with:
 - SystemOut report including steps details (console)
 
 mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev_tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@blood_type
+
 mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev_tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@blood_type
 
 ## Support & Contact

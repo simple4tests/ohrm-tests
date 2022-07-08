@@ -5,7 +5,8 @@ import io.cucumber.java8.En;
 import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.framework.DriverProvider;
-import io.github.simple4tests.webdriver.framework.ReporterSystemOut;
+import io.github.simple4tests.webdriver.framework.Reporter;
+import io.github.simple4tests.webdriver.framework.SystemOutReporter;
 import org.openqa.selenium.WebDriver;
 
 import java.nio.file.Paths;
@@ -37,7 +38,7 @@ public class MetaSteps implements En {
                 System.getProperty("s4t.optionsAsYamlResource"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
 
-        context().reporter = new ReporterSystemOut();
+        context().reporter = new SystemOutReporter();
         context().reporter.clearErrors();
     }
 

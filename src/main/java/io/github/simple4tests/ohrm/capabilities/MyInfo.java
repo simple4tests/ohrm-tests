@@ -25,6 +25,6 @@ public class MyInfo extends Ohrm {
     }
 
     public String getBloodType() {
-        return wdi.element.locatedBy(BLOOD_TYPE_SELECTED).waitToBePresent().getWebElement().getText();
+        return wdi.element.locatedBy(BLOOD_TYPE_SELECTED).getElement().getText();
     }
 }
