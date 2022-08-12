@@ -18,7 +18,7 @@ public class Navigation extends Ohrm {
             reporter.reportAction("Reference does not exist for ".concat(menu));
             return;
         }
-        reporter.reportAction(String.format("Navigate to '%s'", url));
+        reporter.reportAction(String.format("Navigate to '%s'", target));
         wdi.driver.navigate().to(target);
     }
 }
