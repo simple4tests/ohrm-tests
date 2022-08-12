@@ -24,11 +24,10 @@
         <maven.failsafe.version>3.0.0-M7</maven.failsafe.version>
 
         <lombok.version>1.18.24</lombok.version>
-        <slf4j.version>2.0.0-alpha6</slf4j.version>
-        <webdriver-overload.version>2.0.3</webdriver-overload.version>
-        <selenium.version>4.2.2</selenium.version>
-        <serenity.version>3.2.5</serenity.version>
-        <cucumber.version>7.3.3</cucumber.version>
+        <slf4j.version>2.0.0-beta1</slf4j.version>
+        <webdriver-overload.version>2.0.4</webdriver-overload.version>
+        <serenity.version>3.3.1</serenity.version>
+        <cucumber.version>7.4.1</cucumber.version>
     </properties>
 
     <dependencies>
@@ -46,11 +45,6 @@
             <groupId>io.github.simple4tests</groupId>
             <artifactId>webdriver-overload</artifactId>
             <version>${webdriver-overload.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>

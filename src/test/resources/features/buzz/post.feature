@@ -31,6 +31,7 @@ Feature: Orange-HRM: Buzz
       | This is message num. 7 |
       | This is message num. 8 |
 
+  @I_USE_TO_FAILED
   Scenario: Reply to a message
     Given a user connected to the OrangeHRM site
     When the user opens menu BUZZ
