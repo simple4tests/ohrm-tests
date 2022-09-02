@@ -2,15 +2,14 @@ package io.github.simple4tests.ohrm.enums;
 
 public enum Menus {
 
-    ADMIN("index.php/admin/viewAdminModule"),
-    ADMIN__NATIONALITIES("index.php/admin/nationality"),
-    PIM("index.php/pim/viewPimModule"),
-    PIM__CONFIGURATION__OPTIONAL_FIELDS("index.php/pim/configurePim"),
-    PIM__ADD_EMPLOYEE("index.php/pim/addEmployee"),
-    MY_INFO("index.php/pim/viewMyDetails"),
-    MY_INFO__EMERGENCY_CONTACTS("index.php/pim/viewMyDetails"),
-    DASHBOARD("index.php/dashboard"),
-    BUZZ("index.php/buzz/viewBuzz");
+    ADMIN("web/index.php/admin/viewAdminModule"),
+    ADMIN__NATIONALITIES("web/index.php/admin/nationality"),
+    PIM("web/index.php/pim/viewPimModule"),
+    PIM__CONFIGURATION__OPTIONAL_FIELDS("web/index.php/pim/configurePim"),
+    PIM__ADD_EMPLOYEE("web/index.php/pim/addEmployee"),
+    MY_INFO("web/index.php/pim/viewMyDetails"),
+    DASHBOARD("web/index.php/dashboard/index"),
+    BUZZ("web/index.php/buzz/viewBuzz");
 
     public final String href;
 

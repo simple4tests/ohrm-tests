@@ -10,18 +10,16 @@ public class MyInfo extends Ohrm {
     public void setPersonalDetails(PersonalDetailsData personalDetails) {
         reporter.reportAction("Set personal details");
         reporter.reportData(personalDetails.toString());
-        wdi.element.locatedBy(EDIT_PERSONAL_DETAILS).click();
-        wdi.element.locatedBy(NICK_NAME).clearNext(true).sendKeys(personalDetails.nickName);
-        wdi.element.locatedBy(SMOKER).setSelected(personalDetails.smoker);
+        wdi.element.locatedBy(NICK_NAME).click().clearNext(true).sendKeys(personalDetails.nickName);
+        wdi.setSelected(SMOKER, personalDetails.smoker);
         wdi.element.locatedBy(MILITARY_SERVICE).clearNext(true).sendKeys(personalDetails.militaryService);
-        wdi.element.locatedBy(EDIT_PERSONAL_DETAILS).click();
+        wdi.element.locatedBy(SAVE_PERSONAL_DETAILS).click();
     }
 
-    public void setBloodType(String bloodType) {
+    public void setCustomFields(String bloodType) {
         reporter.reportAction("Set blood type ".concat(bloodType));
-        wdi.element.locatedBy(EDIT_CUSTOM_FIELDS).click();
-        wdi.select.locatedBy(BLOOD_TYPE).selectByVisibleText(bloodType);
-        wdi.element.locatedBy(EDIT_CUSTOM_FIELDS).click();
+        wdi.selectByVisibleText(BLOOD_TYPE, bloodType);
+        wdi.element.locatedBy(SAVE_CUSTOM_FIELDS).click();
     }
 
     public String getBloodType() {

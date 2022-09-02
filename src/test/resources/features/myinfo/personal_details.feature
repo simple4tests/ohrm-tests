@@ -13,14 +13,15 @@ Feature: Orange-HRM: Personal Details
     Then the blood type is updated
 
   @personal_details
-  Scenario: Update personal info from file
-    Given a user connected to the OrangeHRM site
-    When the user opens menu MY_INFO
-    And the user updates his personal details with the data 'partial'
-
   Scenario: Update personal info from data table
     Given a user connected to the OrangeHRM site
     When the user opens menu MY_INFO
     And the user updates his personal details with following data
       | nickName         | smoker | militaryService |
       | simple for tests | false  | 9876543210      |
+
+  @personal_details
+  Scenario: Update personal info from file
+    Given a user connected to the OrangeHRM site
+    When the user opens menu MY_INFO
+    And the user updates his personal details with the data 'partial'

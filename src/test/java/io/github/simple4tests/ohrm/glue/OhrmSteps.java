@@ -26,8 +26,11 @@ public class OhrmSteps implements En {
 
         When("(the user )update his blood type with the value {string}", (String bloodType) -> {
             context().bloodType = bloodType;
-            ohrm.myInfo.setBloodType(bloodType);
+            ohrm.myInfo.setCustomFields(bloodType);
         });
+
+        When("(the user )updates his personal details with following data", (PersonalDetailsData personalDetails) ->
+                ohrm.myInfo.setPersonalDetails(personalDetails));
 
         When("(the user )updates his personal details with the data {string}", (String inputSource) -> {
             PersonalDetailsData personalDetails = Yml.loadAs(
@@ -35,9 +38,6 @@ public class OhrmSteps implements En {
                     PersonalDetailsData.class);
             ohrm.myInfo.setPersonalDetails(personalDetails);
         });
-
-        When("(the user )updates his personal details with following data", (PersonalDetailsData personalDetails) ->
-                ohrm.myInfo.setPersonalDetails(personalDetails));
 
         When("(the user  )adds following messages", (DataTable dataTable) -> {
             for (String message : dataTable.asList()) {
