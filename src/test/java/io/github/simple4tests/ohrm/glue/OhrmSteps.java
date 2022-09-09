@@ -14,8 +14,6 @@ public class OhrmSteps implements En {
 
         Given("a user connected to the OrangeHRM site", () -> {
             context().ohrm.navigation.navigateToHome();
-            context().scenario.attach("Hello, i'm connected", "text/plain", "step-info");
-            context().scenario.attach("Hello, i'm still connected", "text/plain", "step-info");
             context().ohrm.login.signIn(context().username, context().password);
         });
 

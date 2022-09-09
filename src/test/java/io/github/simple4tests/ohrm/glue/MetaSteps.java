@@ -5,6 +5,7 @@ import io.cucumber.java8.En;
 import io.cucumber.java8.Scenario;
 import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
+import io.github.simple4tests.webdriver.framework.CucumberJava8Reporter;
 import io.github.simple4tests.webdriver.framework.DriverProvider;
 import io.github.simple4tests.webdriver.framework.SystemOutReporter;
 import org.openqa.selenium.WebDriver;
@@ -22,8 +23,7 @@ public class MetaSteps implements En {
     public MetaSteps() {
 
         Before((Scenario scenario) -> {
-            context().scenario = scenario;
-            initDriverAndReporter();
+            initDriverAndReporter(scenario);
             initOhrmAutomaton();
             initTestContext();
         });
@@ -31,7 +31,7 @@ public class MetaSteps implements En {
         After(this::closeDriverAndReporter);
     }
 
-    public void initDriverAndReporter() {
+    public void initDriverAndReporter(Scenario scenario) {
 
         driver = DriverProvider.get(
                 System.getProperty("s4t.browser"),
@@ -39,7 +39,8 @@ public class MetaSteps implements En {
                 System.getProperty("s4t.optionsAsYamlResource"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
 
-        context().reporter = new SystemOutReporter();
+        context().reporter = new CucumberJava8Reporter();
+        context().reporter.scenario = scenario;
         context().reporter.clearErrors();
     }
 
