@@ -3,12 +3,11 @@ package io.github.simple4tests.ohrm.interactions;
 import io.github.simple4tests.webdriver.interactions.Interactions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-//import static io.github.simple4tests.wdicucumber.locators.CommonLocators.*;
+public class UI extends Interactions {
 
-public class Wdi extends Interactions {
-
-    public Wdi(WebDriver driver) {
+    public UI(WebDriver driver) {
         super(driver);
     }
 
@@ -23,16 +22,19 @@ public class Wdi extends Interactions {
 //        wait.until(input -> 0 == driver.findElements(SUCCESS_MSG).size());
 //    }
 
-    public Wdi setSelected(String xpath, boolean value) {
-        if (element.locatedBy(By.xpath(xpath.concat("//input"))).getElement().isSelected() != value)
-            element.locatedBy(By.xpath(xpath.concat("//span"))).click();
+    @Override
+    public UI setSelected(Object locator, boolean value) {
+        WebElement input = getElement(locator).findElement(By.xpath(".//input"));
+        WebElement span = getElement(locator).findElement(By.xpath(".//span"));
+        if (getElement(input).isSelected() != value)
+            click(span);
         return this;
     }
 
     @Override
-    public Wdi selectByVisibleText(By by, String value) {
-        element.locatedBy(by).click();
-        element.locatedBy(By.xpath(String.format("//div[@role='listbox']/div[.='%s']", value))).click();
+    public UI selectByVisibleText(Object locator, String value) {
+        click(locator);
+        click(String.format("//div[@role='listbox']/div[.='%s']", value));
         return this;
     }
 }

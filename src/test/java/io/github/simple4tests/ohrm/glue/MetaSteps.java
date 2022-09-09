@@ -53,7 +53,7 @@ public class MetaSteps implements En {
     }
 
     public void closeDriverAndReporter() {
-        ohrm.wdi.driver.quit();
+        ohrm.ui.driver.quit();
         context().reporter.throwAssertionErrorIfAny(true);
     }
 

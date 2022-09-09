@@ -1,7 +1,7 @@
 package io.github.simple4tests.ohrm;
 
 import io.github.simple4tests.ohrm.capabilities.*;
-import io.github.simple4tests.ohrm.interactions.Wdi;
+import io.github.simple4tests.ohrm.interactions.UI;
 import io.github.simple4tests.webdriver.framework.Reporter;
 import org.openqa.selenium.WebDriver;
 
@@ -25,7 +25,7 @@ public class Ohrm {
         }
     }
 
-    public Wdi wdi;
+    public UI ui;
     public Reporter reporter;
     public String url;
 
@@ -36,7 +36,7 @@ public class Ohrm {
     public Navigation navigation;
 
     protected void copy(Ohrm ohrm) {
-        this.wdi = ohrm.wdi;
+        this.ui = ohrm.ui;
         this.reporter = ohrm.reporter;
         this.url = ohrm.url;
 
@@ -48,7 +48,7 @@ public class Ohrm {
     }
 
     public void init(WebDriver driver, Reporter reporter, String envNameOrUrl) {
-        this.wdi = new Wdi(driver);
+        this.ui = new UI(driver);
         this.reporter = reporter;
         this.url = Env.getUrlFromEnvNameOrUrl(envNameOrUrl);
 

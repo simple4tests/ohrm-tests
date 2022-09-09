@@ -24,7 +24,7 @@
 
         <lombok.version>1.18.24</lombok.version>
         <slf4j.version>2.0.0-beta1</slf4j.version>
-        <webdriver-overload.version>2.0.4</webdriver-overload.version>
+        <webdriver-overload.version>2.0.5</webdriver-overload.version>
         <serenity.version>3.3.2</serenity.version>
         <cucumber.version>7.4.1</cucumber.version>
     </properties>
