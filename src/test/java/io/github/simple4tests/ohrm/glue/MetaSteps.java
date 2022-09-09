@@ -2,6 +2,7 @@ package io.github.simple4tests.ohrm.glue;
 
 import io.cucumber.java.DataTableType;
 import io.cucumber.java8.En;
+import io.cucumber.java8.Scenario;
 import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.framework.DriverProvider;
@@ -20,7 +21,8 @@ public class MetaSteps implements En {
 
     public MetaSteps() {
 
-        Before(() -> {
+        Before((Scenario scenario) -> {
+            context().scenario = scenario;
             initDriverAndReporter();
             initOhrmAutomaton();
             initTestContext();

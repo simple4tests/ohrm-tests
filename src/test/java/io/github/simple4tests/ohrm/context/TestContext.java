@@ -1,5 +1,6 @@
 package io.github.simple4tests.ohrm.context;
 
+import io.cucumber.java8.Scenario;
 import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.webdriver.framework.Reporter;
 
@@ -11,6 +12,7 @@ public class TestContext {
         return _context.get();
     }
 
+    public Scenario scenario;
     public Reporter reporter;
     public Ohrm ohrm;
 
