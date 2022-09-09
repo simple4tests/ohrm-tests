@@ -7,6 +7,6 @@ import static io.github.simple4tests.ohrm.locators.CommonLocators.TITLE;
 public class Common extends Ohrm {
 
     public String getTitle() {
-        return wdi.element.locatedBy(TITLE).getElement().getText();
+        return ui.getElement(TITLE).getText();
     }
 }

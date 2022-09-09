@@ -8,8 +8,9 @@ public class Login extends Ohrm {
 
     public void signIn(String username, String password) {
         reporter.reportAction("Sign in with username ".concat(username));
-        wdi.element.locatedBy(USERNAME).sendKeys(username);
-        wdi.element.locatedBy(PASSWORD).sendKeys(password);
-        wdi.element.locatedBy(LOGIN).click();
+        ui
+                .sendKeys(USERNAME, username)
+                .sendKeys(PASSWORD, password)
+                .click(LOGIN);
     }
 }

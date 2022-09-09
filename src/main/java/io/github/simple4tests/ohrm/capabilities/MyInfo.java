@@ -10,21 +10,20 @@ public class MyInfo extends Ohrm {
     public void setPersonalDetails(PersonalDetailsData personalDetails) {
         reporter.reportAction("Set personal details");
         reporter.reportData(personalDetails.toString());
-        wdi.element.locatedBy(EDIT_PERSONAL_DETAILS).click();
-        wdi.element.locatedBy(NICK_NAME).clearNext(true).sendKeys(personalDetails.nickName);
-        wdi.element.locatedBy(SMOKER).setSelected(personalDetails.smoker);
-        wdi.element.locatedBy(MILITARY_SERVICE).clearNext(true).sendKeys(personalDetails.militaryService);
-        wdi.element.locatedBy(EDIT_PERSONAL_DETAILS).click();
+        ui.click(NICK_NAME).clearNext(true).sendKeys(NICK_NAME, personalDetails.nickName);
+        ui.setSelected(SMOKER, personalDetails.smoker);
+        ui.clearNext(true).sendKeys(MILITARY_SERVICE, personalDetails.militaryService);
+        ui.click(SAVE_PERSONAL_DETAILS);
     }
 
-    public void setBloodType(String bloodType) {
+    public void setCustomFields(String bloodType) {
         reporter.reportAction("Set blood type ".concat(bloodType));
-        wdi.element.locatedBy(EDIT_CUSTOM_FIELDS).click();
-        wdi.select.locatedBy(BLOOD_TYPE).selectByVisibleText(bloodType);
-        wdi.element.locatedBy(EDIT_CUSTOM_FIELDS).click();
+        ui
+                .selectByVisibleText(BLOOD_TYPE, bloodType)
+                .click(SAVE_CUSTOM_FIELDS);
     }
 
     public String getBloodType() {
-        return wdi.element.locatedBy(BLOOD_TYPE_SELECTED).getElement().getText();
+        return ui.getElement(BLOOD_TYPE_SELECTED).getText();
     }
 }

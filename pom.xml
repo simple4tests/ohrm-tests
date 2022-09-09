@@ -18,14 +18,13 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.encoding>UTF-8</project.encoding>
 
-        <maven.resources.version>3.2.0</maven.resources.version>
-        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <maven.compiler.version>3.10.1</maven.compiler.version>
         <maven.surefire.version>3.0.0-M7</maven.surefire.version>
         <maven.failsafe.version>3.0.0-M7</maven.failsafe.version>
 
         <lombok.version>1.18.24</lombok.version>
         <slf4j.version>2.0.0-beta1</slf4j.version>
-        <webdriver-overload.version>2.0.4</webdriver-overload.version>
+        <webdriver-overload.version>2.0.5</webdriver-overload.version>
         <cucumber.version>7.4.1</cucumber.version>
     </properties>
 

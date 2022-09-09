@@ -5,7 +5,6 @@ import io.cucumber.java8.En;
 import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.framework.DriverProvider;
-import io.github.simple4tests.webdriver.framework.Reporter;
 import io.github.simple4tests.webdriver.framework.SystemOutReporter;
 import org.openqa.selenium.WebDriver;
 
@@ -53,7 +52,7 @@ public class MetaSteps implements En {
     }
 
     public void closeDriverAndReporter() {
-        context().ohrm.wdi.driver.quit();
+        context().ohrm.ui.driver.quit();
         context().reporter.throwAssertionErrorIfAny(true);
     }
 

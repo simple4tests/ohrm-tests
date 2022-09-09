@@ -9,5 +9,5 @@ public class CommonLocators {
 
     public static final By SUCCESS_MSG = By.xpath("//*[@class='message success fadable']");
 
-    public static final By TITLE = By.xpath("//div[@id='content']//div[@class='head']/h1[not(@id)]");
+    public static final By TITLE = By.xpath("//header//span/h6");
 }

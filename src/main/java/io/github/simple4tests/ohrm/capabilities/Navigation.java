@@ -7,7 +7,8 @@ public class Navigation extends Ohrm {
 
     public void navigateToHome() {
         reporter.reportAction("Navigate to home page");
-        wdi.driver.navigate().to(url);
+        ui.driver.navigate().to(url);
+        ui.browser.waitDocumentToBeComplete(true);
     }
 
     public void goTo(String menu) {
@@ -19,6 +20,7 @@ public class Navigation extends Ohrm {
             return;
         }
         reporter.reportAction(String.format("Navigate to '%s'", target));
-        wdi.driver.navigate().to(target);
+        ui.driver.navigate().to(target);
+        ui.browser.waitDocumentToBeComplete(true);
     }
 }
