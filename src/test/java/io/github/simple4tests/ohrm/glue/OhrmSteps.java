@@ -50,9 +50,11 @@ public class OhrmSteps implements En {
                         context().ohrm.common.getTitle(),
                         Matchers.equalTo(title)));
 
-        Then("the blood type is updated", () ->
-                context().reporter.assertThat("Check if blood type is ".concat(context().bloodType),
-                        context().ohrm.myInfo.getBloodType(),
-                        Matchers.equalTo(context().bloodType)));
+        Then("the blood type is updated", () -> {
+            context().ohrm.ui.waitForPageToLoad();
+            context().reporter.assertThat("Check if blood type is ".concat(context().bloodType),
+                    context().ohrm.myInfo.getBloodType(),
+                    Matchers.equalTo(context().bloodType));
+        });
     }
 }
