@@ -5,17 +5,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static io.github.simple4tests.ohrm.locators.CommonLocators.LOADER;
+
 public class UI extends Interactions {
 
     public UI(WebDriver driver) {
         super(driver);
     }
 
-//    public void waitForPageToLoad() {
-//        Sleeper.sleep(250);
-//        wait.elementToBePresent(NO_LOADER);
-//        wait.elementToBePresent(NO_TOGGL);
-//    }
+    public void waitForPageToLoad() {
+        sleep(250);
+        waitToBeAbsent(LOADER);
+    }
 
 //    public void waitForSuccessToDisapear() {
 //        wait.elementToBePresent(SUCCESS_MSG);
