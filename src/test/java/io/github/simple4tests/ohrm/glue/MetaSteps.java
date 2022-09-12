@@ -38,7 +38,7 @@ public class MetaSteps implements En {
     }
 
     public void initDriverAndReporter() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
         reporter.clearErrors();
     }
 

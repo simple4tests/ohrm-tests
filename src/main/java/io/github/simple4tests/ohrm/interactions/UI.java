@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static io.github.simple4tests.ohrm.locators.CommonLocators.LISTBOX_X;
 import static io.github.simple4tests.ohrm.locators.CommonLocators.LOADER;
 
 public class UI extends Interactions {
@@ -35,7 +36,7 @@ public class UI extends Interactions {
     @Override
     public UI selectByVisibleText(Object locator, String value) {
         click(locator);
-        click(String.format("//div[@role='listbox']/div[.='%s']", value));
+        click(String.format(LISTBOX_X, value));
         return this;
     }
 }
