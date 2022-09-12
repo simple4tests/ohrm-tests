@@ -15,8 +15,8 @@ public class Buzz extends Ohrm {
 
     public void reply(String user, int postNumber, String message) {
         reporter.reportAction("Reply with: ".concat(message));
-        ui.
-                sendKeys(String.format(MESSAGE_X_Y, user, postNumber), message)
+        ui
+                .sendKeys(String.format(MESSAGE_X_Y, user, postNumber), message)
                 .click(String.format(POST_X_Y, user, postNumber));
     }
 }
