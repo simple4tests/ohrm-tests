@@ -23,9 +23,10 @@
         <maven-failsafe-plugin.version>3.0.0-M7</maven-failsafe-plugin.version>
 
         <lombok.version>1.18.24</lombok.version>
-        <slf4j.version>2.0.0-beta1</slf4j.version>
+        <slf4j.version>2.0.0</slf4j.version>
         <webdriver-overload.version>2.0.6-SNAPSHOT</webdriver-overload.version>
-        <cucumber.version>7.6.0</cucumber.version>
+        <cucumber.version>7.7.0</cucumber.version>
+        <junit-platform-suite.version>1.9.0</junit-platform-suite.version>
     </properties>
 
     <dependencies>
@@ -65,7 +66,7 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <version>1.9.0</version>
+            <version>${junit-platform-suite.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -111,7 +112,6 @@
                     <argLine>
                         -Xmx1024m
                         -Dfile.encoding=UTF-8
-                        --illegal-access=permit
                     </argLine>
                     <includes>
                         <include>**/*ITs.java</include>
