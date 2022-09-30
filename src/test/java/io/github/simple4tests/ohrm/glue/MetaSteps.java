@@ -19,6 +19,8 @@ public class MetaSteps implements En {
 
     WebDriver driver;
 
+    CucumberJava8Reporter reporter;
+
     public MetaSteps() {
 
         Before((Scenario scenario) -> {
@@ -31,24 +33,24 @@ public class MetaSteps implements En {
     }
 
     public void initDriverAndReporter(Scenario scenario) {
-
         driver = DriverProvider.get(
                 System.getProperty("s4t.browser"),
                 Paths.get(System.getProperty("s4t.driverPath")),
                 System.getProperty("s4t.optionsAsYamlResource"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
 
-        context().reporter = new CucumberJava8Reporter();
-        context().reporter.init(scenario, driver);
-        context().reporter.clearErrors();
+        reporter = new CucumberJava8Reporter();
+        reporter.init(scenario, driver);
+        reporter.clearErrors();
     }
 
     public void initOhrmAutomaton() {
         context().ohrm = new Ohrm();
-        context().ohrm.init(driver, context().reporter, "DEMO");
+        context().ohrm.init(driver, reporter, "DEMO");
     }
 
     public void initTestContext() {
+        context().reporter = reporter;
         context().username = "Admin";
         context().password = "admin123";
     }

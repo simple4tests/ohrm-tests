@@ -40,7 +40,7 @@ public class Ohrm {
         this.reporter = ohrm.reporter;
         this.url = ohrm.url;
 
-        this.buzz= ohrm.buzz;
+        this.buzz = ohrm.buzz;
         this.common = ohrm.common;
         this.login = ohrm.login;
         this.myInfo = ohrm.myInfo;

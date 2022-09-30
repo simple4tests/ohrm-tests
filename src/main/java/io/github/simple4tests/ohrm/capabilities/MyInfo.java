@@ -8,7 +8,6 @@ import static io.github.simple4tests.ohrm.locators.MyInfoLocators.*;
 public class MyInfo extends Ohrm {
 
     public void setPersonalDetails(PersonalDetailsData personalDetails) {
-        reporter.reportAction("ABC", "DFG");
         reporter.reportAction("Set personal details", personalDetails.toString());
         ui.click(NICK_NAME).clearNext(true).sendKeys(NICK_NAME, personalDetails.nickName);
         ui.setSelected(SMOKER, personalDetails.smoker);
