@@ -31,7 +31,7 @@ Using Webdriver Overload with:
 
 mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@blood_type
 
-mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@blood_type
+mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_default.yml -Dcucumber.filter.tags=@blood_type
 
 ## Support & Contact
 

@@ -12,7 +12,7 @@ Feature: Orange-HRM: Personal Details
     And update his blood type with the value 'AB+'
     Then the blood type is updated
 
-  @personal_details
+  @personal_details_a
   Scenario: Update personal info from data table
     Given a user connected to the OrangeHRM site
     When the user opens menu MY_INFO
