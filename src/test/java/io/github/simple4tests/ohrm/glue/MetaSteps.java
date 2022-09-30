@@ -10,7 +10,6 @@ import net.thucydides.core.annotations.Shared;
 import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.WebDriver;
 
-import java.time.Duration;
 import java.util.Map;
 
 import static io.github.simple4tests.ohrm.context.TestContext.context;
@@ -38,7 +37,6 @@ public class MetaSteps implements En {
     }
 
     public void initDriverAndReporter() {
-//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
         reporter.clearErrors();
     }
 

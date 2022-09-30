@@ -15,7 +15,7 @@ public class UI extends Interactions {
     }
 
     public void waitForPageToLoad() {
-        sleep(250);
+        sleep(200);
         waitToBeAbsent(LOADER);
     }
 
