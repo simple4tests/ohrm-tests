@@ -2,7 +2,7 @@ package io.github.simple4tests.ohrm.glue;
 
 import io.cucumber.java.DataTableType;
 import io.cucumber.java8.En;
-import io.github.simple4tests.ohrm.Ohrm;
+import io.github.simple4tests.ohrm.context.TestContext;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.framework.serenity.SerenityReporter;
 import net.thucydides.core.annotations.Managed;
@@ -11,8 +11,6 @@ import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Map;
-
-import static io.github.simple4tests.ohrm.context.TestContext.context;
 
 public class MetaSteps implements En {
 
@@ -23,7 +21,7 @@ public class MetaSteps implements En {
     SerenityReporter reporter;
 
     @Shared
-    Ohrm ohrm;
+    TestContext context;
 
     public MetaSteps() {
 
@@ -38,21 +36,21 @@ public class MetaSteps implements En {
 
     public void initDriverAndReporter() {
         reporter.clearErrors();
+        context.reporter = reporter;
     }
 
     public void initOhrmAutomaton() {
-        ohrm.init(driver, reporter, "DEMO");
+        context.ohrm.init(driver, context.reporter, "DEMO");
     }
 
     public void initTestContext() {
-        context().reporter = reporter;
-        context().username = "Admin";
-        context().password = "admin123";
+        context.username = "Admin";
+        context.password = "admin123";
     }
 
     public void closeDriverAndReporter() {
-        ohrm.ui.driver.quit();
-        context().reporter.throwAssertionErrorIfAny(true);
+        context.ohrm.ui.driver.quit();
+        context.reporter.throwAssertionErrorIfAny(true);
     }
 
     @DataTableType
