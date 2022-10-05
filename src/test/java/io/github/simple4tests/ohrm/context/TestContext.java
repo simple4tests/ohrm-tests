@@ -6,7 +6,8 @@ import io.github.simple4tests.webdriver.framework.Reporter;
 public class TestContext {
 
     public Reporter reporter;
-    public Ohrm ohrm;
+
+    public Ohrm ohrm = new Ohrm();
 
     public String username;
     public String password;

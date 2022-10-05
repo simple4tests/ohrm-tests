@@ -3,7 +3,6 @@ package io.github.simple4tests.ohrm.glue;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java8.En;
 import io.cucumber.java8.Scenario;
-import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.context.TestContext;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.framework.CucumberJava8Reporter;
@@ -18,41 +17,45 @@ public class MetaSteps implements En {
 
     WebDriver driver;
 
+    CucumberJava8Reporter reporter;
+
+    TestContext context;
+
     public MetaSteps(TestContext context) {
+        this.context = context;
 
         Before((Scenario scenario) -> {
-            initDriverAndReporter(scenario, context);
-            initOhrmAutomaton(context);
-            initTestData(context);
+            initDriverAndReporter(scenario);
+            initAutomaton();
+            initTestData();
         });
 
-        After(input -> closeDriverAndReporter(context));
+        After(this::closeDriverAndReporter);
     }
 
-    public void initDriverAndReporter(Scenario scenario, TestContext context) {
+    public void initDriverAndReporter(Scenario scenario) {
         driver = DriverProvider.get(
                 System.getProperty("s4t.browser"),
                 Paths.get(System.getProperty("s4t.driverPath")),
                 System.getProperty("s4t.optionsAsYamlResource"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
 
-        CucumberJava8Reporter reporter = new CucumberJava8Reporter();
+        reporter = new CucumberJava8Reporter();
         reporter.init(scenario, driver);
         reporter.clearErrors();
         context.reporter = reporter;
     }
 
-    public void initOhrmAutomaton(TestContext context) {
-        context.ohrm = new Ohrm();
+    public void initAutomaton() {
         context.ohrm.init(driver, context.reporter, "DEMO");
     }
 
-    public void initTestData(TestContext context) {
+    public void initTestData() {
         context.username = "Admin";
         context.password = "admin123";
     }
 
-    public void closeDriverAndReporter(TestContext context) {
+    public void closeDriverAndReporter() {
         context.ohrm.ui.driver.quit();
         context.reporter.throwAssertionErrorIfAny(true);
     }

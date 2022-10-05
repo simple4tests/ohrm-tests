@@ -9,7 +9,10 @@ import org.hamcrest.Matchers;
 
 public class OhrmSteps implements En {
 
+    TestContext context;
+
     public OhrmSteps(TestContext context) {
+        this.context = context;
 
         Given("a user connected to the OrangeHRM site", () -> {
             context.ohrm.navigation.navigateToHome();
