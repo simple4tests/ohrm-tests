@@ -27,8 +27,8 @@ public class MetaSteps implements En {
 
         Before(() -> {
             initDriverAndReporter();
-            initOhrmAutomaton();
-            initTestContext();
+            initAutomaton();
+            initTestData();
         });
 
         After(this::closeDriverAndReporter);
@@ -39,11 +39,11 @@ public class MetaSteps implements En {
         context.reporter = reporter;
     }
 
-    public void initOhrmAutomaton() {
+    public void initAutomaton() {
         context.ohrm.init(driver, context.reporter, "DEMO");
     }
 
-    public void initTestContext() {
+    public void initTestData() {
         context.username = "Admin";
         context.password = "admin123";
     }
