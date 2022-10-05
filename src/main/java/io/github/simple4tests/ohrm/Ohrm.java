@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class Ohrm {
 
     public enum Env {
-        DEMO("https://opensource-demo.orangehrmlive.com/");
+        XXX("https://.../");
 
         public final String url;
 
@@ -29,22 +29,14 @@ public class Ohrm {
     public Reporter reporter;
     public String url;
 
-    public Buzz buzz;
     public Common common;
-    public Login login;
-    public MyInfo myInfo;
-    public Navigation navigation;
 
     protected void copy(Ohrm ohrm) {
         this.ui = ohrm.ui;
         this.reporter = ohrm.reporter;
         this.url = ohrm.url;
 
-        this.buzz = ohrm.buzz;
         this.common = ohrm.common;
-        this.login = ohrm.login;
-        this.myInfo = ohrm.myInfo;
-        this.navigation = ohrm.navigation;
     }
 
     public void init(WebDriver driver, Reporter reporter, String envNameOrUrl) {
@@ -52,16 +44,8 @@ public class Ohrm {
         this.reporter = reporter;
         this.url = Env.getUrlFromEnvNameOrUrl(envNameOrUrl);
 
-        this.buzz = new Buzz();
         this.common = new Common();
-        this.login = new Login();
-        this.myInfo = new MyInfo();
-        this.navigation = new Navigation();
 
-        this.buzz.copy(this);
         this.common.copy(this);
-        this.login.copy(this);
-        this.myInfo.copy(this);
-        this.navigation.copy(this);
     }
 }
