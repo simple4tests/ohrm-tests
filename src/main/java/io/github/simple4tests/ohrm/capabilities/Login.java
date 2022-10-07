@@ -12,6 +12,5 @@ public class Login extends Ohrm {
                 .sendKeys(USERNAME, username)
                 .sendKeys(PASSWORD, password)
                 .click(LOGIN);
-        ui.driver.findElement(USERNAME).sendKeys(username);
     }
 }
