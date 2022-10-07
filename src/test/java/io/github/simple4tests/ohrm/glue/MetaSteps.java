@@ -3,7 +3,9 @@ package io.github.simple4tests.ohrm.glue;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java8.En;
 import io.cucumber.java8.Scenario;
-import io.github.simple4tests.ohrm.context.TestContext;
+import io.github.simple4tests.ohrm.Ohrm;
+import io.github.simple4tests.ohrm.context.TestConfig;
+import io.github.simple4tests.ohrm.context.TestData;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.framework.CucumberJava8Reporter;
 import io.github.simple4tests.webdriver.framework.DriverProvider;
@@ -17,47 +19,52 @@ public class MetaSteps implements En {
 
     WebDriver driver;
 
+    Ohrm ohrm;
+
     CucumberJava8Reporter reporter;
 
-    TestContext context;
+    TestData testData;
 
-    public MetaSteps(TestContext context) {
-        this.context = context;
+    public MetaSteps(TestConfig config) {
+        this.ohrm = config.ohrm;
+        this.reporter = config.reporter;
+        this.testData = config.testData;
 
         Before((Scenario scenario) -> {
-            initDriverAndReporter(scenario);
+            initDriver();
             initAutomaton();
+            initReporter(scenario);
             initTestData();
         });
 
-        After(this::closeDriverAndReporter);
+        After(this::closeAll);
     }
 
-    public void initDriverAndReporter(Scenario scenario) {
+    public void initDriver() {
         driver = DriverProvider.get(
                 System.getProperty("s4t.browser"),
                 Paths.get(System.getProperty("s4t.driverPath")),
                 System.getProperty("s4t.optionsAsYamlResource"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
-
-        reporter = new CucumberJava8Reporter();
-        reporter.init(scenario, driver);
-        reporter.clearErrors();
-        context.reporter = reporter;
     }
 
     public void initAutomaton() {
-        context.ohrm.init(driver, context.reporter, "DEMO");
+        ohrm.init(driver, reporter, "DEMO");
+    }
+
+    public void initReporter(Scenario scenario) {
+        reporter.init(scenario, driver);
+        reporter.clearErrors();
     }
 
     public void initTestData() {
-        context.username = "Admin";
-        context.password = "admin123";
+        testData.username = "Admin";
+        testData.password = "admin123";
     }
 
-    public void closeDriverAndReporter() {
-        context.ohrm.ui.driver.quit();
-        context.reporter.throwAssertionErrorIfAny(true);
+    public void closeAll() {
+        ohrm.ui.driver.quit();
+        reporter.throwAssertionErrorIfAny(true);
     }
 
     @DataTableType
