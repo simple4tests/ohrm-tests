@@ -25,6 +25,7 @@
         <lombok.version>1.18.24</lombok.version>
         <slf4j.version>2.0.3</slf4j.version>
         <webdriver-overload.version>2.0.8</webdriver-overload.version>
+        <spring-boot.version>2.7.4</spring-boot.version>
         <cucumber.version>7.8.0</cucumber.version>
         <junit-platform-suite.version>1.9.1</junit-platform-suite.version>
     </properties>
@@ -46,6 +47,12 @@
             <version>${webdriver-overload.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
@@ -53,7 +60,7 @@
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-picocontainer</artifactId>
+            <artifactId>cucumber-spring</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
