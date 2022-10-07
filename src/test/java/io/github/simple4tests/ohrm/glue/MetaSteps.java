@@ -18,12 +18,12 @@ import java.util.Map;
 public class MetaSteps implements En {
 
     WebDriver driver;
-    
-    @Autowired
-    CucumberJava8Reporter reporter;
 
     @Autowired
     Ohrm ohrm;
+
+    @Autowired
+    CucumberJava8Reporter reporter;
 
     @Autowired
     TestData testData;
@@ -32,8 +32,8 @@ public class MetaSteps implements En {
 
         Before((Scenario scenario) -> {
             initDriver();
-            initReporter(scenario);
             initAutomaton();
+            initReporter(scenario);
             initTestData();
         });
 
@@ -48,13 +48,13 @@ public class MetaSteps implements En {
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
     }
 
+    public void initAutomaton() {
+        ohrm.init(driver, reporter, "DEMO");
+    }
+
     public void initReporter(Scenario scenario) {
         reporter.init(scenario, driver);
         reporter.clearErrors();
-    }
-
-    public void initAutomaton() {
-        ohrm.init(driver, reporter, "DEMO");
     }
 
     public void initTestData() {

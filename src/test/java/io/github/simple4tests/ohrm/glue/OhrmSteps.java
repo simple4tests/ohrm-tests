@@ -13,10 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class OhrmSteps implements En {
 
     @Autowired
-    CucumberJava8Reporter reporter;
+    Ohrm ohrm;
 
     @Autowired
-    Ohrm ohrm;
+    CucumberJava8Reporter reporter;
 
     @Autowired
     TestData testData;
