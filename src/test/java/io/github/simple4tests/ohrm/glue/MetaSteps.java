@@ -2,12 +2,12 @@ package io.github.simple4tests.ohrm.glue;
 
 import io.cucumber.java.DataTableType;
 import io.cucumber.java8.En;
-import io.github.simple4tests.ohrm.context.TestContext;
+import io.github.simple4tests.ohrm.Ohrm;
+import io.github.simple4tests.ohrm.context.TestData;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.framework.serenity.SerenityReporter;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Shared;
-import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Map;
@@ -17,40 +17,42 @@ public class MetaSteps implements En {
     @Managed(driver = "provided")
     WebDriver driver;
 
-    @Steps
+    @Shared
+    Ohrm ohrm;
+
+    @Shared
     SerenityReporter reporter;
 
     @Shared
-    TestContext context;
+    TestData testData;
 
     public MetaSteps() {
 
         Before(() -> {
-            initDriverAndReporter();
+            initReporter();
             initAutomaton();
             initTestData();
         });
 
-        After(this::closeDriverAndReporter);
+        After(this::closeAll);
     }
 
-    public void initDriverAndReporter() {
+    public void initReporter() {
         reporter.clearErrors();
-        context.reporter = reporter;
     }
 
     public void initAutomaton() {
-        context.ohrm.init(driver, context.reporter, "DEMO");
+        ohrm.init(driver, reporter, "DEMO");
     }
 
     public void initTestData() {
-        context.username = "Admin";
-        context.password = "admin123";
+        testData.username = "Admin";
+        testData.password = "admin123";
     }
 
-    public void closeDriverAndReporter() {
-        context.ohrm.ui.driver.quit();
-        context.reporter.throwAssertionErrorIfAny(true);
+    public void closeAll() {
+        ohrm.ui.driver.quit();
+        reporter.throwAssertionErrorIfAny(true);
     }
 
     @DataTableType
