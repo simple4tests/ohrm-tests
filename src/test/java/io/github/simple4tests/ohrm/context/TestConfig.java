@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestConfig {
 
-    @Bean("ohrm")
-    public Ohrm getOhrm() {
-        return new Ohrm();
-    }
-
     @Bean("reporter")
     public CucumberJava8Reporter getReporter() {
         return new CucumberJava8Reporter();
+    }
+
+    @Bean("ohrm")
+    public Ohrm getOhrm() {
+        return new Ohrm();
     }
 
     @Bean("testData")
