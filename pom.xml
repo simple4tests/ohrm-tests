@@ -7,8 +7,8 @@
     <artifactId>ohrm-tests</artifactId>
     <version>0.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Orange HRM tests using cucumber and WebDriver Overload</name>
-    <description>Orange HRM tests using cucumber and WebDriver Overload</description>
+    <name>OHRM Test Automation Demo</name>
+    <description>OHRM Test Automation Demo using WebDriver-Overload by Simple4Tests</description>
 
     <properties>
         <java.version>11</java.version>

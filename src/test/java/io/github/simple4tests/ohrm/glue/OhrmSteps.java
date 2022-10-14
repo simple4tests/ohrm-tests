@@ -13,10 +13,10 @@ import org.hamcrest.Matchers;
 public class OhrmSteps implements En {
 
     @Shared
-    Ohrm ohrm;
+    SerenityReporter reporter;
 
     @Shared
-    SerenityReporter reporter;
+    Ohrm ohrm;
 
     @Shared
     TestData testData;

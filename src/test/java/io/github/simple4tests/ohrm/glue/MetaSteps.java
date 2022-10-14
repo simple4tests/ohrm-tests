@@ -18,10 +18,10 @@ public class MetaSteps implements En {
     WebDriver driver;
 
     @Shared
-    Ohrm ohrm;
+    SerenityReporter reporter;
 
     @Shared
-    SerenityReporter reporter;
+    Ohrm ohrm;
 
     @Shared
     TestData testData;
@@ -51,8 +51,8 @@ public class MetaSteps implements En {
     }
 
     public void closeAll() {
-        ohrm.ui.driver.quit();
         reporter.throwAssertionErrorIfAny(true);
+        ohrm.ui.driver.quit();
     }
 
     @DataTableType
