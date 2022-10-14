@@ -12,15 +12,15 @@ import org.hamcrest.Matchers;
 
 public class OhrmSteps implements En {
 
-    Ohrm ohrm;
-
     CucumberJava8Reporter reporter;
+
+    Ohrm ohrm;
 
     TestData testData;
 
     public OhrmSteps(TestConfig config) {
-        this.ohrm = config.ohrm;
         this.reporter = config.reporter;
+        this.ohrm = config.ohrm;
         this.testData = config.testData;
 
         Given("a user connected to the OrangeHRM site", () -> {

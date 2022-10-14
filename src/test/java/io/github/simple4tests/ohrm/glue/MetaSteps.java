@@ -19,21 +19,21 @@ public class MetaSteps implements En {
 
     WebDriver driver;
 
-    Ohrm ohrm;
-
     CucumberJava8Reporter reporter;
+
+    Ohrm ohrm;
 
     TestData testData;
 
     public MetaSteps(TestConfig config) {
-        this.ohrm = config.ohrm;
         this.reporter = config.reporter;
+        this.ohrm = config.ohrm;
         this.testData = config.testData;
 
         Before((Scenario scenario) -> {
             initDriver();
-            initAutomaton();
             initReporter(scenario);
+            initAutomaton();
             initTestData();
         });
 
@@ -48,13 +48,13 @@ public class MetaSteps implements En {
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
     }
 
-    public void initAutomaton() {
-        ohrm.init(driver, reporter, "DEMO");
-    }
-
     public void initReporter(Scenario scenario) {
         reporter.init(scenario, driver);
         reporter.clearErrors();
+    }
+
+    public void initAutomaton() {
+        ohrm.init(driver, reporter, "DEMO");
     }
 
     public void initTestData() {
@@ -63,8 +63,8 @@ public class MetaSteps implements En {
     }
 
     public void closeAll() {
-        ohrm.ui.driver.quit();
         reporter.throwAssertionErrorIfAny(true);
+        ohrm.ui.driver.quit();
     }
 
     @DataTableType
