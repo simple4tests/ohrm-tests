@@ -9,10 +9,10 @@ Feature: Orange-HRM: Buzz
 #    Given a user connected to the OrangeHRM site
 #    When the user opens menu BUZZ
 #    And adds following messages
-#      | MESSAGE                  |
-#      | This is my first message |
-#      | This is message num. 2   |
-#      | This is message num. 3   |
+#      | MESSAGE                |
+#      | This is message num. 1 |
+#      | This is message num. 2 |
+#      | This is message num. 3 |
 #    And opens menu DASHBOARD
 #    And opens menu BUZZ
 #    And adds following messages
