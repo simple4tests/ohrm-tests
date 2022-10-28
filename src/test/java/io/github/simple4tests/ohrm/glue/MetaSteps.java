@@ -51,8 +51,8 @@ public class MetaSteps implements En {
     }
 
     public void closeAll() {
-        reporter.throwAssertionErrorIfAny(true);
         ohrm.ui.driver.quit();
+        reporter.throwAssertionErrorIfAny(true);
     }
 
     @DataTableType
