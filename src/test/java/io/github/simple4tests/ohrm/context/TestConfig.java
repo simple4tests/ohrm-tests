@@ -1,7 +1,7 @@
 package io.github.simple4tests.ohrm.context;
 
 import io.github.simple4tests.ohrm.Ohrm;
-import io.github.simple4tests.webdriver.framework.CucumberJava8Reporter;
+import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 

@@ -2,7 +2,7 @@ package io.github.simple4tests.ohrm;
 
 import io.github.simple4tests.ohrm.capabilities.*;
 import io.github.simple4tests.ohrm.interactions.UI;
-import io.github.simple4tests.webdriver.framework.Reporter;
+import io.github.simple4tests.webdriver.reporters.Reporter;
 import org.openqa.selenium.WebDriver;
 
 public class Ohrm {
