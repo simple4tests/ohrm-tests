@@ -7,8 +7,8 @@ import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.context.TestConfig;
 import io.github.simple4tests.ohrm.context.TestData;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
-import io.github.simple4tests.webdriver.framework.CucumberJava8Reporter;
-import io.github.simple4tests.webdriver.framework.DriverProvider;
+import io.github.simple4tests.webdriver.providers.WebDriverProvider;
+import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
 import org.openqa.selenium.WebDriver;
 
 import java.nio.file.Paths;
@@ -41,7 +41,7 @@ public class MetaSteps implements En {
     }
 
     public void initDriver() {
-        driver = DriverProvider.get(
+        driver = WebDriverProvider.get(
                 System.getProperty("s4t.browser"),
                 Paths.get(System.getProperty("s4t.driverPath")),
                 System.getProperty("s4t.optionsAsYamlResource"));

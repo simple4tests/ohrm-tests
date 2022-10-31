@@ -6,7 +6,7 @@ import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.context.TestConfig;
 import io.github.simple4tests.ohrm.context.TestData;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
-import io.github.simple4tests.webdriver.framework.CucumberJava8Reporter;
+import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
 import io.github.simple4tests.webdriver.utils.Yml;
 import org.hamcrest.Matchers;
 
