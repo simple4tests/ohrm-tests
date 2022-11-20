@@ -13,7 +13,7 @@ Some test examples written with WebDriverInteractions and illustrating the simpl
 
 ## Branches
 
-### cucumber_picocontainer (cucumber tests & html pretty report)
+### main / cucumber_picocontainer (cucumber tests & html pretty report)
 
 Using Webdriver Overload with:
 
