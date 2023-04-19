@@ -22,12 +22,12 @@
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.0.0-M7</maven-failsafe-plugin.version>
 
-        <lombok.version>1.18.24</lombok.version>
-        <slf4j.version>2.0.5</slf4j.version>
-        <webdriver-overload.version>2.0.10</webdriver-overload.version>
-        <spring-boot.version>2.7.5</spring-boot.version>
-        <cucumber.version>7.8.1</cucumber.version>
-        <junit-platform-suite.version>1.9.1</junit-platform-suite.version>
+        <lombok.version>1.18.26</lombok.version>
+        <slf4j.version>2.0.7</slf4j.version>
+        <webdriver-overload.version>2.0.11</webdriver-overload.version>
+        <spring-boot.version>2.7.10</spring-boot.version>
+        <cucumber.version>7.11.0</cucumber.version>
+        <junit-platform-suite.version>1.9.2</junit-platform-suite.version>
     </properties>
 
     <dependencies>
