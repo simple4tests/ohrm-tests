@@ -1,8 +1,9 @@
 package io.github.simple4tests.ohrm.context;
 
+import io.restassured.response.Response;
+
 public class TestData {
 
-    public String username;
-    public String password;
-    public String bloodType;
+    public Response responseV1;
+    public Response responseV2;
 }
