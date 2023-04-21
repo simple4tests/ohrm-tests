@@ -1,8 +1,8 @@
 package io.github.simple4tests.sncfws;
 
-import io.github.simple4tests.webdriver.reporters.Reporter;
 import io.github.simple4tests.sncfws.capabilities.MunicipalitiesV1;
 import io.github.simple4tests.sncfws.capabilities.MunicipalitiesV2;
+import io.github.simple4tests.webdriver.reporters.Reporter;
 
 public class SncfWs {
 

@@ -4,7 +4,6 @@ import io.cucumber.java8.En;
 import io.github.simple4tests.ohrm.context.TestData;
 import io.github.simple4tests.sncfws.SncfWs;
 import io.github.simple4tests.sncfws.json.JsonUtils;
-import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
 import io.github.simple4tests.webdriver.reporters.SerenityReporter;
 import net.thucydides.core.annotations.Shared;
 import org.hamcrest.Matchers;

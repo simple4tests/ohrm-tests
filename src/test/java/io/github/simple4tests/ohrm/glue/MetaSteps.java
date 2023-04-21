@@ -29,7 +29,6 @@ public class MetaSteps implements En {
             initReporter();
             initAutomaton();
             initTestData();
-            driver.navigate().to("about:blank");
         });
 
         After(this::closeAll);
