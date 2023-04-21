@@ -22,7 +22,7 @@ public class MunicipalitiesV1 extends SncfWs {
         response = RestAssured
                 .given().get(uri)
                 .thenReturn();
-        reporter.reportAction("Appel WS Municipalities V1 pour toutes les communes");
+        reporter.reportAction("Appel WS Municipalities V1 pour toutes les communes ; Total = ".concat(response.path("nom.size()").toString()));
         return response;
     }
 }

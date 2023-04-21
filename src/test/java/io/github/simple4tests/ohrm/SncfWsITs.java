@@ -10,5 +10,5 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(
         key = Constants.PLUGIN_PROPERTY_NAME,
         value = "pretty, html:target/site/cucumber/index.html")
-public class OhrmITs {
+public class SncfWsITs {
 }

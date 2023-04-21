@@ -18,9 +18,9 @@ public class JsonUtils {
             keys.addAll(json2.keySet());
             for (String innerKey : keys) {
                 if (!json1.has(innerKey)) {
-                    differences.add("Key " + key + "." + innerKey + " is missing from response 1");
+                    differences.add("\nKey " + key + "." + innerKey + " is missing from response 1");
                 } else if (!json2.has(innerKey)) {
-                    differences.add("Key " + key + "." + innerKey + " is missing from response 2");
+                    differences.add("\nKey " + key + "." + innerKey + " is missing from response 2");
                 } else {
                     differences.addAll(getJsonDifferences(json1.get(innerKey), json2.get(innerKey), key + "." + innerKey));
                 }
@@ -30,7 +30,7 @@ public class JsonUtils {
             JSONArray arr2 = (JSONArray) obj2;
 
             if (arr1.length() != arr2.length()) {
-                differences.add("Array length for key " + key + " is different between the two responses");
+                differences.add("\nArray length for key " + key + " is different between the two responses");
             } else {
                 for (int i = 0; i < arr1.length(); i++) {
                     differences.addAll(getJsonDifferences(arr1.get(i), arr2.get(i), key + "[" + i + "]"));
@@ -38,7 +38,7 @@ public class JsonUtils {
             }
         } else if (!Objects.equals(obj1, obj2)) {
 //            differences.add("Value for key " + key + " is different between the two responses");
-            differences.add(String.format("Value for key '%s' is different [R1:  %s] ; [R2: %s]",
+            differences.add(String.format("\nValue for key '%s' is different [R1:  %s] ; [R2: %s]",
                     key,
                     obj1.toString(),
                     obj2.toString()));
