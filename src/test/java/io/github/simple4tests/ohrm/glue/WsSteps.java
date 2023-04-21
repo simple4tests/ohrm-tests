@@ -1,25 +1,27 @@
 package io.github.simple4tests.ohrm.glue;
 
 import io.cucumber.java8.En;
-import io.github.simple4tests.ohrm.context.TestConfig;
 import io.github.simple4tests.ohrm.context.TestData;
-import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
 import io.github.simple4tests.sncfws.SncfWs;
 import io.github.simple4tests.sncfws.json.JsonUtils;
+import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
+import io.github.simple4tests.webdriver.reporters.SerenityReporter;
+import net.thucydides.core.annotations.Shared;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
 
 public class WsSteps implements En {
 
-    CucumberJava8Reporter reporter;
+    @Shared
+    SerenityReporter reporter;
 
+    @Shared
     SncfWs sncfWs;
+
+    @Shared
     TestData testData;
 
-    public WsSteps(TestConfig config) {
-        this.reporter = config.reporter;
-        this.sncfWs = config.sncfWs;
-        this.testData = config.testData;
+    public WsSteps() {
 
         Given("a call to the municipalities v1 webservice for municipalitie INSEE code {word}", (String inseeCode) ->
                 testData.responseV1 = sncfWs.municipalitiesV1.get(inseeCode));

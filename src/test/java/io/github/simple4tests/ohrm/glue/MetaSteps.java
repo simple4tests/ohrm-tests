@@ -2,51 +2,40 @@ package io.github.simple4tests.ohrm.glue;
 
 import io.cucumber.java8.En;
 import io.cucumber.java8.Scenario;
-import io.github.simple4tests.ohrm.context.TestConfig;
 import io.github.simple4tests.ohrm.context.TestData;
-import io.github.simple4tests.webdriver.providers.WebDriverProvider;
-import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
 import io.github.simple4tests.sncfws.SncfWs;
+import io.github.simple4tests.webdriver.reporters.SerenityReporter;
+import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Shared;
 import org.openqa.selenium.WebDriver;
-
-import java.nio.file.Paths;
-import java.time.Duration;
 
 public class MetaSteps implements En {
 
+    @Managed(driver = "provided")
     WebDriver driver;
 
-    CucumberJava8Reporter reporter;
+    @Shared
+    SerenityReporter reporter;
 
+    @Shared
     SncfWs sncfWs;
 
+    @Shared
     TestData testData;
 
-    public MetaSteps(TestConfig config) {
-        this.reporter = config.reporter;
-        this.sncfWs = config.sncfWs;
-        this.testData = config.testData;
+    public MetaSteps() {
 
         Before((Scenario scenario) -> {
-            initDriver();
-            initReporter(scenario);
+            initReporter();
             initAutomaton();
             initTestData();
+            driver.navigate().to("about:blank");
         });
 
         After(this::closeAll);
     }
 
-    public void initDriver() {
-        driver = WebDriverProvider.get(
-                System.getProperty("s4t.browser"),
-                Paths.get(System.getProperty("s4t.driverPath")),
-                System.getProperty("s4t.optionsAsYamlResource"));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50));
-    }
-
-    public void initReporter(Scenario scenario) {
-        reporter.init(scenario, driver);
+    public void initReporter() {
         reporter.clearErrors();
     }
 

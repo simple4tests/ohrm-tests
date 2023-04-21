@@ -13,7 +13,7 @@ public class MunicipalitiesV2 extends SncfWs {
         response = RestAssured
                 .given().get(uri.concat(inseeCode))
                 .thenReturn();
-        reporter.reportAction("Appel WS Municipalities V1 pour la commune ".concat(inseeCode), response.asString());
+        reporter.reportAction("Appel WS Municipalities V2 pour la commune ".concat(inseeCode), response.asString());
         return response;
     }
 
@@ -22,7 +22,7 @@ public class MunicipalitiesV2 extends SncfWs {
         response = RestAssured
                 .given().get(uri)
                 .thenReturn();
-        reporter.reportAction("Appel WS Municipalities V1 pour toutes les communes");
+        reporter.reportAction("Appel WS Municipalities V2 pour toutes les communes ; Total = ".concat(response.path("nom.size()").toString()));
         return response;
     }
 }
