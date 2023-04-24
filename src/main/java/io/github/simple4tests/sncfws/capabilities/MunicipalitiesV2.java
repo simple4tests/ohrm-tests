@@ -9,8 +9,7 @@ public class MunicipalitiesV2 extends SncfWs {
     String uri = "https://geo.api.gouv.fr/communes/";
 
     public Response get(String inseeCode) {
-        Response response;
-        response = RestAssured
+        Response response = RestAssured
                 .given().get(uri.concat(inseeCode))
                 .thenReturn();
         reporter.reportAction("Appel WS Municipalities V2 pour la commune ".concat(inseeCode), response.asString());
@@ -18,8 +17,7 @@ public class MunicipalitiesV2 extends SncfWs {
     }
 
     public Response get() {
-        Response response;
-        response = RestAssured
+        Response response = RestAssured
                 .given().get(uri)
                 .thenReturn();
         reporter.reportAction("Appel WS Municipalities V2 pour toutes les communes ; Total = ".concat(response.path("nom.size()").toString()));

@@ -7,6 +7,7 @@ import io.github.simple4tests.sncfws.json.JsonUtils;
 import io.github.simple4tests.webdriver.reporters.SerenityReporter;
 import net.thucydides.core.annotations.Shared;
 import org.hamcrest.Matchers;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class WsSteps implements En {
@@ -53,6 +54,18 @@ public class WsSteps implements En {
             reporter.assertThat("Check that the 2 answers have the same number of municipalities",
                     responseV1Count,
                     Matchers.equalTo(responseV2Count));
+        });
+
+        Then("JSON responses have the same elements in same order", () -> {
+            JsonUtils.counter = 0;
+            reporter.assertThat("Check that the 2 answers are identical in terms of key value pair",
+                    JsonUtils.getJsonDifferences(
+                                    new JSONArray(testData.responseV1.getBody().asString()),
+                                    new JSONArray(testData.responseV2.getBody().asString()),
+                                    "")
+                            .toString(),
+                    "[]");
+            reporter.reportData("Number of key value pair comparaison: ".concat(String.valueOf(JsonUtils.counter)));
         });
     }
 }
