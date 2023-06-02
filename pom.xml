@@ -25,9 +25,9 @@
         <lombok.version>1.18.26</lombok.version>
         <slf4j.version>2.0.7</slf4j.version>
         <webdriver-overload.version>2.0.11</webdriver-overload.version>
-        <!--        <serenity.version>3.6.23</serenity.version>-->
         <serenity.version>3.7.1</serenity.version>
-        <cucumber.version>7.11.2</cucumber.version>
+        <cucumber.version>7.12.0</cucumber.version>
+        <junit-platform-suite.version>1.9.3</junit-platform-suite.version>
     </properties>
 
     <dependencies>
@@ -46,6 +46,13 @@
             <artifactId>webdriver-overload</artifactId>
             <version>${webdriver-overload.version}</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>io.cucumber</groupId>-->
+<!--            <artifactId>cucumber-junit</artifactId>-->
+<!--            <version>${cucumber.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-cucumber</artifactId>
@@ -72,12 +79,6 @@
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
@@ -85,8 +86,7 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <!--            <version>${junit-platform-suite.version}</version>-->
-            <version>1.9.2</version>
+            <version>${junit-platform-suite.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -153,13 +153,13 @@
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-core</artifactId>
-                        <version>${serenity.version}</version>
-                    </dependency>
-                </dependencies>
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>net.serenity-bdd</groupId>-->
+<!--                        <artifactId>serenity-core</artifactId>-->
+<!--                        <version>${serenity.version}</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
