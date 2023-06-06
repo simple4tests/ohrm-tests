@@ -47,27 +47,15 @@
             <version>${webdriver-overload.version}</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>cucumber-junit</artifactId>-->
-<!--            <version>${cucumber.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
         <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber</artifactId>
-            <version>${serenity.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-junit5</artifactId>
-            <version>${serenity.version}</version>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit-platform-suite.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
@@ -78,15 +66,15 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit-platform-engine</artifactId>
-            <version>${cucumber.version}</version>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-suite</artifactId>
-            <version>${junit-platform-suite.version}</version>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit5</artifactId>
+            <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -129,16 +117,16 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>${maven-failsafe-plugin.version}</version>
                 <configuration>
+                    <excludes>
+                        <include>**/*Tests.java</include>
+                    </excludes>
+                    <includes>
+                        <include>**/*ITs.java</include>
+                    </includes>
                     <argLine>
                         -Xmx1024m
                         -Dfile.encoding=UTF-8
                     </argLine>
-                    <includes>
-                        <include>**/*ITs.java</include>
-                    </includes>
-                    <excludes>
-                        <include>**/*Tests.java</include>
-                    </excludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -153,13 +141,18 @@
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.version}</version>
-<!--                <dependencies>-->
-<!--                    <dependency>-->
-<!--                        <groupId>net.serenity-bdd</groupId>-->
-<!--                        <artifactId>serenity-core</artifactId>-->
-<!--                        <version>${serenity.version}</version>-->
-<!--                    </dependency>-->
-<!--                </dependencies>-->
+                <dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-core</artifactId>
+                        <version>${serenity.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-single-page-report</artifactId>
+                        <version>${serenity.version}</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
@@ -169,6 +162,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <reports>single-page-html</reports>
+                </configuration>
             </plugin>
         </plugins>
     </build>

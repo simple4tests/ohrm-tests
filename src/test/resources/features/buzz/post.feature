@@ -5,31 +5,28 @@ Feature: Orange-HRM: Buzz
   - Add message
   - Reply to a message
 
-#  Scenario: Add multiple messages
-#    Given a user connected to the OrangeHRM site
-#    When the user opens menu BUZZ
-#    And adds following messages
-#      | MESSAGE                |
-#      | This is message num. 1 |
-#      | This is message num. 2 |
-#      | This is message num. 3 |
-#    And opens menu DASHBOARD
-#    And opens menu BUZZ
-#    And adds following messages
-#      | MESSAGE                |
-#      | This is message num. 4 |
-#      | This is message num. 5 |
+  @TT
+  Scenario: Add multiple messages
+    Given a user connected to the OrangeHRM site
+    When the user opens menu BUZZ
+    And adds following messages
+      | This is message num. 1 |
+      | This is message num. 2 |
+    And opens menu DASHBOARD
+    And opens menu BUZZ
+    And adds following messages
+      | This is message num. 3 |
 
-#  Scenario Outline: Add message
-#    Given a user connected to the OrangeHRM site
-#    When the user opens menu BUZZ
-#    And adds message '<Message>'
-#
-#    Examples:
-#      | Message                |
-#      | This is message num. 6 |
-#      | This is message num. 7 |
-#      | This is message num. 8 |
+  @TT
+  Scenario Outline: Add message
+    Given a user connected to the OrangeHRM site
+    When the user opens menu BUZZ
+    And adds message '<Message>'
+
+    Examples:
+      | Message                |
+      | This is message num. 4 |
+      | This is message num. 5 |
 
 #  @I_USE_TO_FAILED
 #  Scenario: Reply to a message

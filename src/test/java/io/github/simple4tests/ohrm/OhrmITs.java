@@ -9,11 +9,12 @@ import org.junit.platform.suite.api.SelectClasspathResource;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
-@IncludeEngines("cucumber")
+//@IncludeEngines("cucumber")
 @ExtendWith(SerenityJUnit5Extension.class)
 @SelectClasspathResource("features")
+@ConfigurationParameter(key = Constants.PLUGIN_PUBLISH_QUIET_PROPERTY_NAME, value = "true")
 @ConfigurationParameter(
         key = Constants.PLUGIN_PROPERTY_NAME,
-        value = "pretty, html:target/site/cucumber/index.html")
+        value = "pretty, json:target/cucuber.json, io.cucumber.core.plugin.SerenityReporter")
 public class OhrmITs {
 }
