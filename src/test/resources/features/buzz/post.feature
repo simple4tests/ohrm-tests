@@ -3,9 +3,8 @@ Feature: Orange-HRM: Buzz
   The scenarios below verify the following functionalities:
   - Add multiple messages
   - Add message
-  - Reply to a message
+#  - Reply to a message
 
-  @TT
   Scenario: Add multiple messages
     Given a user connected to the OrangeHRM site
     When the user opens menu BUZZ
@@ -17,7 +16,6 @@ Feature: Orange-HRM: Buzz
     And adds following messages
       | This is message num. 3 |
 
-  @TT
   Scenario Outline: Add message
     Given a user connected to the OrangeHRM site
     When the user opens menu BUZZ

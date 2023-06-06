@@ -51,6 +51,19 @@ mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/ch
 
 mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@BLOOD_TYPE
 
+### cucumber_serenity_junit5 (cucumber tests & html serenity report)
+
+Using Webdriver Overload with:
+
+- cucumber tests with cucumber expressions
+- serenity report including execution status, gherkin, steps details and screenshots (target/site/serenity/index.html)
+- serenity single page report (target/site/serenity/serenity-summary.html)
+- junit 5
+
+mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@BLOOD_TYPE
+
+mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@BLOOD_TYPE
+
 ## Support & Contact
 
 Additional information can be found at https://simple4tests.github.io/ and https://simple4tests.github.io/method/method.html
