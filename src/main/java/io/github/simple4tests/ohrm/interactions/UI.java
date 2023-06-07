@@ -12,11 +12,10 @@ public class UI extends Interactions {
 
     public UI(WebDriver driver) {
         super(driver);
-//        setImplicitWaits(200);
+        setImplicitWaits(200);
     }
 
     public void waitForPageToLoad() {
-//        sleep(200);
         waitToBeAbsent(LOADER);
     }
 

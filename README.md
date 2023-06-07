@@ -45,6 +45,7 @@ Using Webdriver Overload with:
 
 - cucumber tests with cucumber expressions
 - serenity report including execution status, gherkin, steps details and screenshots (target/site/serenity/index.html)
+- serenity single page report (target/site/serenity/serenity-summary.html)
 - junit 4
 
 mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@BLOOD_TYPE
