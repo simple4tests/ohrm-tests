@@ -18,9 +18,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.encoding>UTF-8</project.encoding>
 
-        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.0.0-M7</maven-failsafe-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
 
         <lombok.version>1.18.26</lombok.version>
         <slf4j.version>2.0.7</slf4j.version>
@@ -90,12 +90,12 @@
                 <configuration>
                     <skip>false</skip>
                     <skipTests>false</skipTests>
-                    <includes>
-                        <include>**/*Tests.java</include>
-                    </includes>
                     <excludes>
                         <include>**/*ITs.java</include>
                     </excludes>
+                    <includes>
+                        <include>**/*Tests.java</include>
+                    </includes>
                 </configuration>
             </plugin>
             <plugin>
@@ -103,16 +103,16 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>${maven-failsafe-plugin.version}</version>
                 <configuration>
+                    <excludes>
+                        <include>**/*Tests.java</include>
+                    </excludes>
+                    <includes>
+                        <include>**/*ITs.java</include>
+                    </includes>
                     <argLine>
                         -Xmx1024m
                         -Dfile.encoding=UTF-8
                     </argLine>
-                    <includes>
-                        <include>**/*ITs.java</include>
-                    </includes>
-                    <excludes>
-                        <include>**/*Tests.java</include>
-                    </excludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -133,6 +133,11 @@
                         <artifactId>serenity-core</artifactId>
                         <version>${serenity.version}</version>
                     </dependency>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-single-page-report</artifactId>
+                        <version>${serenity.version}</version>
+                    </dependency>
                 </dependencies>
                 <executions>
                     <execution>
@@ -143,6 +148,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <reports>single-page-html</reports>
+                </configuration>
             </plugin>
         </plugins>
     </build>

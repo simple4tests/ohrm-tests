@@ -19,7 +19,6 @@ public class Navigation extends Ohrm {
             return;
         }
         reporter.reportAction(String.format("Navigate to '%s'", target));
-        ui.sleep(1000);
         ui.driver.navigate().to(target);
         ui.waitForPageToLoad();
     }
