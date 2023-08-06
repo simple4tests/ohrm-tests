@@ -24,7 +24,7 @@
 
         <lombok.version>1.18.28</lombok.version>
         <slf4j.version>2.0.7</slf4j.version>
-        <webdriver-overload.version>2.0.12-SNAPSHOT</webdriver-overload.version>
+        <webdriver-overload.version>2.0.12</webdriver-overload.version>
         <serenity.version>3.9.8</serenity.version>
         <cucumber.version>7.13.0</cucumber.version>
         <junit-platform-suite.version>1.10.0</junit-platform-suite.version>
