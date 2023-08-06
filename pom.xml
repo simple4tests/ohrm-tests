@@ -19,14 +19,14 @@
         <project.encoding>UTF-8</project.encoding>
 
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.1.2</maven-failsafe-plugin.version>
 
-        <lombok.version>1.18.26</lombok.version>
+        <lombok.version>1.18.28</lombok.version>
         <slf4j.version>2.0.7</slf4j.version>
-        <webdriver-overload.version>2.0.11</webdriver-overload.version>
-        <spring-boot.version>2.7.10</spring-boot.version>
-        <cucumber.version>7.12.0</cucumber.version>
+        <webdriver-overload.version>2.0.12-SNAPSHOT</webdriver-overload.version>
+        <spring-boot.version>2.7.14</spring-boot.version>
+        <cucumber.version>7.13.0</cucumber.version>
         <junit-platform-suite.version>1.9.3</junit-platform-suite.version>
     </properties>
 
