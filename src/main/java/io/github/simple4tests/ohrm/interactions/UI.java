@@ -5,8 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static io.github.simple4tests.ohrm.locators.CommonLocators.LISTBOX_X;
-import static io.github.simple4tests.ohrm.locators.CommonLocators.LOADER;
+import static io.github.simple4tests.ohrm.locators.CommonLocators.*;
 
 public class UI extends Interactions {
 
@@ -16,7 +15,9 @@ public class UI extends Interactions {
     }
 
     public void waitForPageToLoad() {
+        sleep(200);
         waitToBeAbsent(LOADER);
+        sleep(200);
     }
 
 //    public void waitForSuccessToDisapear() {
