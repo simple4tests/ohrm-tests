@@ -26,7 +26,8 @@
         <slf4j.version>2.0.7</slf4j.version>
         <webdriver-overload.version>2.0.12</webdriver-overload.version>
         <cucumber.version>7.13.0</cucumber.version>
-        <junit-platform-suite.version>1.9.3</junit-platform-suite.version>
+        <junit-platform-suite.version>1.10.0</junit-platform-suite.version>
+        <junit-engine.version>5.10.0</junit-engine.version>
     </properties>
 
     <dependencies>
@@ -45,9 +46,22 @@
             <artifactId>webdriver-overload</artifactId>
             <version>${webdriver-overload.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit-platform-suite.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-picocontainer</artifactId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
@@ -65,14 +79,8 @@
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <artifactId>cucumber-picocontainer</artifactId>
             <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-suite</artifactId>
-            <version>${junit-platform-suite.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
