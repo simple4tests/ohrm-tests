@@ -5,7 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static io.github.simple4tests.ohrm.locators.CommonLocators.*;
+import static io.github.simple4tests.ohrm.locators.CommonLocators.LISTBOX_X;
+import static io.github.simple4tests.ohrm.locators.CommonLocators.LOADER;
 
 public class UI extends Interactions {
 

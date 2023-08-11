@@ -135,6 +135,8 @@
                         -Xmx1024m
                         -Dfile.encoding=UTF-8
                     </argLine>
+                    <parallel>methods</parallel>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
                 </configuration>
                 <executions>
                     <execution>
