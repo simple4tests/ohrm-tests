@@ -11,6 +11,7 @@ public class Buzz extends Ohrm {
         ui
                 .sendKeys(NEW_MESSAGE, message)
                 .click(POST);
+        ui.waitForPageToLoad();
     }
 
     public void reply(String user, int postNumber, String message) {
@@ -18,5 +19,6 @@ public class Buzz extends Ohrm {
         ui
                 .sendKeys(String.format(MESSAGE_X_Y, user, postNumber), message)
                 .click(String.format(POST_X_Y, user, postNumber));
+        ui.waitForPageToLoad();
     }
 }
