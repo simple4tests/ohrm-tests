@@ -5,20 +5,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static io.github.simple4tests.ohrm.locators.CommonLocators.LISTBOX_X;
-import static io.github.simple4tests.ohrm.locators.CommonLocators.LOADER;
+import java.time.Duration;
+
+import static io.github.simple4tests.ohrm.locators.CommonLocators.*;
 
 public class UI extends Interactions {
 
     public UI(WebDriver driver) {
         super(driver);
-        setImplicitWaits(200);
+//        setImplicitWaits(200, 200);
     }
 
     public void waitForPageToLoad() {
-        sleep(200);
+//        sleep(250);
+        wait.ignoreTimeoutException().until(input -> isPresent(SPINNER), Duration.ofMillis(1000), Duration.ofMillis(100));
+        waitToBeAbsent(SPINNER);
+        wait.ignoreTimeoutException().until(input -> isPresent(LOADER), Duration.ofMillis(1000), Duration.ofMillis(100));
         waitToBeAbsent(LOADER);
-        sleep(200);
+        sleep(50);
     }
 
 //    public void waitForSuccessToDisapear() {
