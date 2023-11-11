@@ -8,9 +8,8 @@ public class Login extends Ohrm {
 
     public void signIn(String username, String password) {
         reporter.reportAction("Sign in with username ".concat(username));
-        ui
-                .sendKeys(USERNAME, username)
-                .sendKeys(PASSWORD, password)
-                .click(LOGIN);
+        ui.sendKeys(USERNAME, username);
+        ui.sendKeys(PASSWORD, password);
+        ui.click(LOGIN);
     }
 }
