@@ -6,8 +6,8 @@ import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.context.TestData;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.reporters.SerenityReporter;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Shared;
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.annotations.Shared;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Map;

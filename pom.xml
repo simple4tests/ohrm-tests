@@ -19,16 +19,21 @@
         <project.encoding>UTF-8</project.encoding>
 
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.1.2</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.2.2</maven-failsafe-plugin.version>
 
-        <lombok.version>1.18.28</lombok.version>
-        <slf4j.version>2.0.7</slf4j.version>
-        <webdriver-overload.version>2.0.12</webdriver-overload.version>
-        <serenity.version>3.9.8</serenity.version>
-        <cucumber.version>7.13.0</cucumber.version>
-        <junit-platform-suite.version>1.10.0</junit-platform-suite.version>
-        <junit-engine.version>5.10.0</junit-engine.version>
+        <lombok.version>1.18.30</lombok.version>
+        <slf4j.version>2.0.9</slf4j.version>
+        <webdriver-overload.version>3.0.0-SNAPSHOT</webdriver-overload.version>
+<!--        <serenity.version>3.9.8</serenity.version>-->
+        <serenity.version>4.0.19</serenity.version>
+<!--        <cucumber.version>7.13.0</cucumber.version>-->
+        <cucumber.version>7.14.0</cucumber.version>
+<!--        <junit-platform-suite.version>1.10.0</junit-platform-suite.version>-->
+        <junit-platform-suite.version>1.10.1</junit-platform-suite.version>
+<!--        <junit-engine.version>5.10.0</junit-engine.version>-->
+        <junit-engine.version>5.10.1</junit-engine.version>
+<!--        <selenium.version>4.14.1</selenium.version>-->
     </properties>
 
     <dependencies>
@@ -42,6 +47,11 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-java</artifactId>-->
+<!--            <version>${selenium.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.github.simple4tests</groupId>
             <artifactId>webdriver-overload</artifactId>

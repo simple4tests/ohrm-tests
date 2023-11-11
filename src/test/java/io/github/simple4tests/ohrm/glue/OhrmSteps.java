@@ -7,7 +7,7 @@ import io.github.simple4tests.ohrm.context.TestData;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 import io.github.simple4tests.webdriver.reporters.SerenityReporter;
 import io.github.simple4tests.webdriver.utils.Yml;
-import net.thucydides.core.annotations.Shared;
+import net.serenitybdd.annotations.Shared;
 import org.hamcrest.Matchers;
 
 public class OhrmSteps implements En {
