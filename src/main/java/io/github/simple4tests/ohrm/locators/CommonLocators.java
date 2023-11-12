@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 public class CommonLocators {
 
+    public static final By CONTENT = By.xpath("//div[@id='app' and @data-v-app]");
     public static final By SPINNER = By.xpath("//*[@class='oxd-loading-spinner']");
     public static final By LOADER = By.xpath("//*[@class='oxd-form-loader']");
 
