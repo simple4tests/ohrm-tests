@@ -13,7 +13,7 @@ Some test examples written with WebDriverInteractions and illustrating the simpl
 
 ## Branches
 
-### main / cucumber_picocontainer (cucumber tests & html pretty report)
+### main / junit_cucumber_picocontainer (cucumber tests & html pretty report)
 
 Using Webdriver Overload with:
 
@@ -22,11 +22,7 @@ Using Webdriver Overload with:
 - pretty html report including execution status and gherkin, steps details and screenshots (target/site/cucumber/index.html)
 - junit 5
 
-mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@BLOOD_TYPE
-
-mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@BLOOD_TYPE
-
-### cucumber_spring (cucumber tests & html pretty report)
+### junit_cucumber_spring (cucumber tests & html pretty report)
 
 Using Webdriver Overload with:
 
@@ -35,34 +31,22 @@ Using Webdriver Overload with:
 - pretty html report including execution status and gherkin, steps details and screenshots (target/site/cucumber/index.html)
 - junit 5
 
-mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@BLOOD_TYPE
-
-mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@BLOOD_TYPE
-
-### cucumber_serenity (cucumber tests & html serenity report)
+### junit_cucumber_serenity (cucumber tests & html serenity report)
 
 Using Webdriver Overload with:
 
 - cucumber tests with cucumber expressions
 - serenity report including execution status, gherkin, steps details and screenshots (target/site/serenity/index.html)
 - serenity single page report (target/site/serenity/serenity-summary.html)
-- junit 4
+- junit 4 and serenity 3
+- junit 5 and serenity 3 or serenity 4
+
+### Run tests
 
 mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@BLOOD_TYPE
+mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_headless.yml -Dcucumber.filter.tags=@BLOOD_TYPE
 
-mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@BLOOD_TYPE
-
-### cucumber_serenity_junit5 (cucumber tests & html serenity report)
-
-Using Webdriver Overload with:
-
-- cucumber tests with cucumber expressions
-- serenity report including execution status, gherkin, steps details and screenshots (target/site/serenity/index.html)
-- serenity single page report (target/site/serenity/serenity-summary.html)
-- junit 5
-
-mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/chromedriver.exe" -Ds4t.optionsAsYamlResource=chrome_options_default.yml -Dcucumber.filter.tags=@BLOOD_TYPE
-
+mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_default.yml -Dcucumber.filter.tags=@BLOOD_TYPE
 mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@BLOOD_TYPE
 
 ## Support & Contact
