@@ -52,7 +52,7 @@ mvn clean verify -Ds4t.browser=chrome -Ds4t.driverPath="c:/dev/tools/selenium/ch
 
 mvn clean verify -Ds4t.browser=firefox -Ds4t.driverPath="c:/dev/tools/selenium/geckodriver.exe" -Ds4t.optionsAsYamlResource=firefox_options_headless.yml -Dcucumber.filter.tags=@BLOOD_TYPE
 
-### junit5_cucumber_serenity (cucumber tests & html serenity report)
+### junit_cucumber_serenity (cucumber tests & html serenity report)
 
 Using Webdriver Overload with:
 
