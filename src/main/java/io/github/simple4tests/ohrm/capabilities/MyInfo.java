@@ -17,9 +17,8 @@ public class MyInfo extends Ohrm {
 
     public void setCustomFields(String bloodType) {
         reporter.reportAction("Set blood type ".concat(bloodType));
-        ui
-                .selectByVisibleText(BLOOD_TYPE, bloodType)
-                .click(SAVE_CUSTOM_FIELDS);
+        ui.selectByVisibleText(BLOOD_TYPE, bloodType);
+        ui.click(SAVE_CUSTOM_FIELDS);
     }
 
     public String getBloodType() {
