@@ -19,11 +19,11 @@
         <project.encoding>UTF-8</project.encoding>
 
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.1.2</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.2.2</maven-failsafe-plugin.version>
 
-        <lombok.version>1.18.28</lombok.version>
-        <slf4j.version>2.0.7</slf4j.version>
+        <lombok.version>1.18.30</lombok.version>
+        <slf4j.version>2.0.9</slf4j.version>
         <webdriver-overload.version>2.0.12</webdriver-overload.version>
         <serenity.version>3.9.8</serenity.version>
         <cucumber.version>7.13.0</cucumber.version>
@@ -90,12 +90,12 @@
                 <configuration>
                     <skip>false</skip>
                     <skipTests>false</skipTests>
-                    <excludes>
-                        <include>**/*ITs.java</include>
-                    </excludes>
                     <includes>
                         <include>**/*Tests.java</include>
                     </includes>
+                    <excludes>
+                        <include>**/*ITs.java</include>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>
@@ -128,11 +128,11 @@
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.version}</version>
                 <dependencies>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-core</artifactId>
-                        <version>${serenity.version}</version>
-                    </dependency>
+                    <!--                    <dependency>-->
+                    <!--                        <groupId>net.serenity-bdd</groupId>-->
+                    <!--                        <artifactId>serenity-core</artifactId>-->
+                    <!--                        <version>${serenity.version}</version>-->
+                    <!--                    </dependency>-->
                     <dependency>
                         <groupId>net.serenity-bdd</groupId>
                         <artifactId>serenity-single-page-report</artifactId>

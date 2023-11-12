@@ -8,15 +8,15 @@ public class Buzz extends Ohrm {
 
     public void add(String message) {
         reporter.reportAction("Add message : ".concat(message));
-        ui
-                .sendKeys(NEW_MESSAGE, message)
-                .click(POST);
+        ui.sendKeys(NEW_MESSAGE, message);
+        ui.click(POST);
+        ui.waitForPageToLoad();
     }
 
     public void reply(String user, int postNumber, String message) {
         reporter.reportAction("Reply : ".concat(message));
-        ui
-                .sendKeys(String.format(MESSAGE_X_Y, user, postNumber), message)
-                .click(String.format(POST_X_Y, user, postNumber));
+        ui.sendKeys(String.format(MESSAGE_X_Y, user, postNumber), message);
+        ui.click(String.format(POST_X_Y, user, postNumber));
+        ui.waitForPageToLoad();
     }
 }
