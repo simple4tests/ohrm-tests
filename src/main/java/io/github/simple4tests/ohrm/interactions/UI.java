@@ -13,11 +13,12 @@ public class UI extends Interactions {
 
     public UI(WebDriver driver) {
         super(driver);
-//        setImplicitWaits(200, 200);
+//        setImplicitWaits(50, 50);
     }
 
     public void waitForPageToLoad() {
-//        sleep(250);
+        sleep(200);
+        wait.ignoreTimeoutException().until(input -> isPresent(CONTENT), Duration.ofMillis(1000), Duration.ofMillis(100));
         wait.ignoreTimeoutException().until(input -> isPresent(SPINNER), Duration.ofMillis(1000), Duration.ofMillis(100));
         waitToBeAbsent(SPINNER);
         wait.ignoreTimeoutException().until(input -> isPresent(LOADER), Duration.ofMillis(1000), Duration.ofMillis(100));
