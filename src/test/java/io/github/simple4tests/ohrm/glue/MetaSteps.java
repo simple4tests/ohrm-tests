@@ -42,7 +42,7 @@ public class MetaSteps implements En {
     }
 
     public void initAutomaton() {
-        ohrm.init(driver, reporter, "DEMO");
+        ohrm.init(driver, reporter, Ohrm.Env.DEMO);
     }
 
     public void initTestData() {
