@@ -11,15 +11,19 @@ Feature: Orange-HRM: Buzz
     And adds following messages
       | This is message num. 1 |
       | This is message num. 2 |
-    And opens menu DASHBOARD
+    Then the post 'This is message num. 1' exists
+    And the post 'This is message num. 2' exists
+    When opens menu DASHBOARD
     And opens menu BUZZ
     And adds following messages
       | This is message num. 3 |
+    Then the post 'This is message num. 3' exists
 
   Scenario Outline: Add message
     Given a user connected to the OrangeHRM site
     When the user opens menu BUZZ
     And adds message '<Message>'
+    Then the post '<Message>' exists
 
     Examples:
       | Message                |
