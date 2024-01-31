@@ -58,7 +58,7 @@ public class OhrmSteps implements En {
 
         Then("the page {string} is displayed", (String title) ->
                 reporter.assertThat("Check if page title is ".concat(title),
-                        ohrm.common.getTitle(),
+                        ohrm.getTitle(),
                         Matchers.equalTo(title)));
 
         Then("the blood type is updated", () -> {
@@ -67,5 +67,10 @@ public class OhrmSteps implements En {
                     ohrm.myInfo.getBloodType(),
                     Matchers.equalTo(testData.bloodType));
         });
+
+        Then("the post {string} exists", (String message) ->
+                reporter.assertThat("Check if message exists",
+                        ohrm.buzz.waitToBePresent(message),
+                        true));
     }
 }

@@ -3,6 +3,7 @@ Feature: Orange-HRM: Custom fields
   The scenarios below verify the following functionalities:
   - Update blood type
 
+  @isolated
   @BLOOD_TYPE
   Scenario: Update blood type
     Given a user connected to the OrangeHRM site

@@ -5,6 +5,8 @@ import io.github.simple4tests.ohrm.interactions.UI;
 import io.github.simple4tests.webdriver.reporters.Reporter;
 import org.openqa.selenium.WebDriver;
 
+import static io.github.simple4tests.ohrm.locators.CommonLocators.TITLE;
+
 public class Ohrm {
 
     public enum Env {
@@ -30,7 +32,6 @@ public class Ohrm {
     public String url;
 
     public Buzz buzz;
-    public Common common;
     public Login login;
     public MyInfo myInfo;
     public Navigation navigation;
@@ -41,7 +42,6 @@ public class Ohrm {
         this.url = ohrm.url;
 
         this.buzz = ohrm.buzz;
-        this.common = ohrm.common;
         this.login = ohrm.login;
         this.myInfo = ohrm.myInfo;
         this.navigation = ohrm.navigation;
@@ -53,15 +53,21 @@ public class Ohrm {
         this.url = Env.getUrlFromEnvNameOrUrl(envNameOrUrl);
 
         this.buzz = new Buzz();
-        this.common = new Common();
         this.login = new Login();
         this.myInfo = new MyInfo();
         this.navigation = new Navigation();
 
         this.buzz.copy(this);
-        this.common.copy(this);
         this.login.copy(this);
         this.myInfo.copy(this);
         this.navigation.copy(this);
+    }
+
+    public void init(WebDriver driver, Reporter reporter, Env env) {
+        init(driver, reporter, env.name());
+    }
+
+    public String getTitle() {
+        return ui.getElement(TITLE).getText();
     }
 }
