@@ -10,10 +10,10 @@ public class Login extends Ohrm {
     public static final By LOGIN = By.xpath("//button[@type='submit']");
 
     public void signIn(String username, String password) {
-        reporter.startAction("Sign in with username ".concat(username));
+        reporter.startStep("Sign in with username ".concat(username));
         ui.sendKeys(USERNAME, username);
         ui.sendKeys(PASSWORD, password);
         ui.click(LOGIN);
-        reporter.endAction();
+        reporter.endStep();
     }
 }
