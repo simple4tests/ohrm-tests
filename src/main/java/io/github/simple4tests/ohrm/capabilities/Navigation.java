@@ -6,9 +6,9 @@ import io.github.simple4tests.ohrm.enums.Menus;
 public class Navigation extends Ohrm {
 
     public void navigateToHome() {
-        reporter.startAction("Navigate to home page");
+        reporter.startStep("Navigate to home page");
         ui.driver.navigate().to(url);
-        reporter.endAction();
+        reporter.endStep();
     }
 
     public void goTo(String menu) {
@@ -19,9 +19,9 @@ public class Navigation extends Ohrm {
             reporter.reportAction("Reference does not exist for ".concat(menu));
             return;
         }
-        reporter.startAction(String.format("Navigate to '%s'", target));
+        reporter.startStep(String.format("Navigate to '%s'", target));
         ui.driver.navigate().to(target);
         ui.waitForPageToLoad();
-        reporter.endAction();
+        reporter.endStep();
     }
 }
