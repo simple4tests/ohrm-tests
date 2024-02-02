@@ -15,20 +15,20 @@ public class MyInfo extends Ohrm {
     public static final String SAVE_CUSTOM_FIELDS = "//div[./h6[.='Custom Fields']]//button[@type='submit']";
 
     public void setPersonalDetails(PersonalDetailsData personalDetails) {
-        reporter.startAction("Set personal details");
+        reporter.startStep("Set personal details");
         reporter.reportData(personalDetails.toString());
         ui.click(NICK_NAME).clearNext(true).sendKeys(NICK_NAME, personalDetails.nickName);
         ui.setSelected(SMOKER, personalDetails.smoker);
         ui.clearNext(true).sendKeys(MILITARY_SERVICE, personalDetails.militaryService);
         ui.click(SAVE_PERSONAL_DETAILS);
-        reporter.endAction();
+        reporter.endStep();
     }
 
     public void setCustomFields(String bloodType) {
-        reporter.startAction("Set blood type ".concat(bloodType));
+        reporter.startStep("Set blood type ".concat(bloodType));
         ui.selectByVisibleText(BLOOD_TYPE, bloodType);
         ui.click(SAVE_CUSTOM_FIELDS);
-        reporter.endAction();
+        reporter.endStep();
     }
 
     public String getBloodType() {
