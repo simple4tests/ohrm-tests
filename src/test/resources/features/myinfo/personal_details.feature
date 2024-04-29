@@ -12,7 +12,7 @@ Feature: Orange-HRM: Personal Details
       | nickName         | smoker | militaryService |
       | simple for tests | false  | 9876543210      |
 
-  @isolated
+  @isolated @X
   Scenario: Update personal info from file
     Given a user connected to the OrangeHRM site
     When the user opens menu MY_INFO
