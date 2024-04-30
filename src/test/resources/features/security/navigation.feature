@@ -8,11 +8,11 @@ Feature: Orange-HRM: Connectivity & Navigation
     When the user opens menu MY_INFO
     Then the page 'PIM' is displayed
     When the user opens menu ADMIN__NATIONALITIES
-    Then the page 'Adminx' is displayed
+    Then the page 'Admin' is displayed
     When the user opens menu PIM__CONFIGURATION__OPTIONAL_FIELDS
     Then the page 'PIM' is displayed
 #    Then the page 'Simulated Error' is displayed
     When the user opens menu PIM__ADD_EMPLOYEE
-    Then the page 'PIMx' is displayed
+    Then the page 'PIM' is displayed
     When the user opens menu DASHBOARD
     Then the page 'Dashboard' is displayed
