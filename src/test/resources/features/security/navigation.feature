@@ -13,6 +13,6 @@ Feature: Orange-HRM: Connectivity & Navigation
     Then the page 'PIM' is displayed
 #    Then the page 'Simulated Error' is displayed
     When the user opens menu PIM__ADD_EMPLOYEE
-    Then the page 'PIM' is displayed
+    Then the page 'PIMx' is displayed
     When the user opens menu DASHBOARD
     Then the page 'Dashboard' is displayed
