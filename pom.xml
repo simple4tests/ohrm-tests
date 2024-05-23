@@ -11,7 +11,7 @@
     <description>OHRM Test Automation Demo using WebDriver-Overload by Simple4Tests</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>21</java.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
@@ -24,9 +24,9 @@
 
         <lombok.version>1.18.32</lombok.version>
         <slf4j.version>2.0.13</slf4j.version>
-        <webdriver-overload.version>3.0.3</webdriver-overload.version>
-        <serenity.version>4.1.10</serenity.version>
-        <cucumber.version>7.16.1</cucumber.version>
+        <webdriver-overload.version>3.0.4-SNAPSHOT</webdriver-overload.version>
+        <serenity.version>4.1.14</serenity.version>
+        <cucumber.version>7.18.0</cucumber.version>
         <junit-platform-suite.version>1.10.2</junit-platform-suite.version>
         <junit-engine.version>5.10.2</junit-engine.version>
     </properties>
