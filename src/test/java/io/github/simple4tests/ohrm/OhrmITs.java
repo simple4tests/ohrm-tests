@@ -12,7 +12,7 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(key = Constants.PLUGIN_PUBLISH_QUIET_PROPERTY_NAME, value = "true")
 @ConfigurationParameter(
         key = Constants.PLUGIN_PROPERTY_NAME,
-        value = "pretty,json:target/cucumber.json,html:target/site/cucumber/index.html")
+        value = "pretty,json:target/cucumber.json,io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm")
 //@ConfigurationParameter(key = "cucumber.execution.parallel.enabled", value = "true")
 //@ConfigurationParameter(key = "cucumber.execution.parallel.config.strategy", value = "fixed")
 //@ConfigurationParameter(key = "cucumber.execution.parallel.config.fixed.parallelism", value = "2")

@@ -1,7 +1,7 @@
 package io.github.simple4tests.ohrm.context;
 
 import io.github.simple4tests.ohrm.Ohrm;
-import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
+import io.github.simple4tests.webdriver.reporters.AllureReporter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 public class TestConfig {
 
     @Bean("reporter")
-    public CucumberJava8Reporter getReporter() {
-        return new CucumberJava8Reporter();
+    public AllureReporter getReporter() {
+        return new AllureReporter();
     }
 
     @Bean("ohrm")

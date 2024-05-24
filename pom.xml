@@ -26,9 +26,11 @@
         <slf4j.version>2.0.13</slf4j.version>
         <webdriver-overload.version>3.0.4-SNAPSHOT</webdriver-overload.version>
         <spring-boot.version>3.3.0</spring-boot.version>
-        <cucumber.version>7.18.0</cucumber.version>
+        <cucumber.version>7.16.0</cucumber.version>
         <junit-platform-suite.version>1.10.2</junit-platform-suite.version>
         <junit-engine.version>5.10.2</junit-engine.version>
+        <allure.version>2.27.0</allure.version>
+        <aspectj.version>1.9.22.1</aspectj.version>
     </properties>
 
     <dependencies>
@@ -90,6 +92,18 @@
             <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit-platform</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -139,6 +153,7 @@
                     <argLine>
                         -Xmx1024m
                         -Dfile.encoding=UTF-8
+<!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
                     </argLine>
                 </configuration>
                 <executions>
@@ -149,6 +164,30 @@
                         </goals>
                     </execution>
                 </executions>
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.aspectj</groupId>-->
+<!--                        <artifactId>aspectjweaver</artifactId>-->
+<!--                        <version>${aspectj.version}</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.12.0</version>
+                <executions>
+                    <execution>
+                        <id>allure-reports</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -5,7 +5,7 @@ import io.cucumber.java8.En;
 import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.ohrm.context.TestData;
 import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
-import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
+import io.github.simple4tests.webdriver.reporters.AllureReporter;
 import io.github.simple4tests.webdriver.utils.Yml;
 import org.hamcrest.Matchers;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class OhrmSteps implements En {
 
     @Autowired
-    CucumberJava8Reporter reporter;
+    AllureReporter reporter;
 
     @Autowired
     Ohrm ohrm;
@@ -63,6 +63,9 @@ public class OhrmSteps implements En {
 
         Then("the blood type is updated", () -> {
             ohrm.ui.waitForPageToLoad();
+            reporter.assertThat("Check if blood type is not ".concat(testData.bloodType),
+                    ohrm.myInfo.getBloodType(),
+                    Matchers.not(Matchers.equalTo(testData.bloodType)));
             reporter.assertThat("Check if blood type is ".concat(testData.bloodType),
                     ohrm.myInfo.getBloodType(),
                     Matchers.equalTo(testData.bloodType));
