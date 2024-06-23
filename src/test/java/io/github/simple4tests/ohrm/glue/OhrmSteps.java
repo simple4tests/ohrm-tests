@@ -14,12 +14,11 @@ public class OhrmSteps implements En {
 
     @Autowired
     CucumberJava8Reporter reporter;
+    @Autowired
+    TestData testData;
 
     @Autowired
     Ohrm ohrm;
-
-    @Autowired
-    TestData testData;
 
     public OhrmSteps() {
 
@@ -73,10 +72,9 @@ public class OhrmSteps implements En {
                         ohrm.buzz.waitToBePresent(message),
                         true));
 
-        Then("an error is simulated", () -> {
-            reporter.assertThat("Check if 1 equals 2",
-                    1,
-                    Matchers.equalTo(2));
-        });
+        Then("an error is simulated", () ->
+                reporter.assertThat("Check if 1 equals 2",
+                        1,
+                        Matchers.equalTo(2)));
     }
 }
