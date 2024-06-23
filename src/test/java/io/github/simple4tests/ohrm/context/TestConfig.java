@@ -7,7 +7,7 @@ public class TestConfig {
 
     public CucumberJava8Reporter reporter = new CucumberJava8Reporter();
 
-    public Ohrm ohrm = new Ohrm();
-
     public TestData testData = new TestData();
+
+    public Ohrm ohrm = new Ohrm();
 }
