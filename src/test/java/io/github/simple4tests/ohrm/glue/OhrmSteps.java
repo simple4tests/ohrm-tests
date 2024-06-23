@@ -13,10 +13,9 @@ import org.hamcrest.Matchers;
 public class OhrmSteps implements En {
 
     CucumberJava8Reporter reporter;
+    TestData testData;
 
     Ohrm ohrm;
-
-    TestData testData;
 
     public OhrmSteps(TestConfig config) {
         this.reporter = config.reporter;
@@ -72,5 +71,10 @@ public class OhrmSteps implements En {
                 reporter.assertThat("Check if message exists",
                         ohrm.buzz.waitToBePresent(message),
                         true));
+
+        Then("an error is simulated", () ->
+                reporter.assertThat("Check if 1 equals 2",
+                        1,
+                        Matchers.equalTo(2)));
     }
 }

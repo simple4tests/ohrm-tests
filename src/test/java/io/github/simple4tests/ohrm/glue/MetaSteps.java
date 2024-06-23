@@ -20,15 +20,14 @@ public class MetaSteps implements En {
     WebDriver driver;
 
     CucumberJava8Reporter reporter;
+    TestData testData;
 
     Ohrm ohrm;
 
-    TestData testData;
-
     public MetaSteps(TestConfig config) {
         this.reporter = config.reporter;
-        this.ohrm = config.ohrm;
         this.testData = config.testData;
+        this.ohrm = config.ohrm;
 
         Before((Scenario scenario) -> {
             initDriver();

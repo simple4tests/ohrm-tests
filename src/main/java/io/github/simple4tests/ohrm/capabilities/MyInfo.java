@@ -5,7 +5,6 @@ import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 
 public class MyInfo extends Ohrm {
 
-//    public static final String NICK_NAME = "//div[contains(@class,'oxd-input-group') and .//label[text()='Nickname']]//input";
     public static final String NICK_NAME = "//input[@name='firstName']";
 
     public static final String SMOKER = "//div[contains(@class,'oxd-input-group') and .//label[text()='Smoker']]";
