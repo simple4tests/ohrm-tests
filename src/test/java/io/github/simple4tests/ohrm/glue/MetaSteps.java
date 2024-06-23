@@ -19,12 +19,11 @@ public class MetaSteps implements En {
 
     @Shared
     SerenityReporter reporter;
+    @Shared
+    TestData testData;
 
     @Shared
     Ohrm ohrm;
-
-    @Shared
-    TestData testData;
 
     public MetaSteps() {
 
