@@ -14,12 +14,11 @@ public class OhrmSteps implements En {
 
     @Autowired
     AllureReporter reporter;
+    @Autowired
+    TestData testData;
 
     @Autowired
     Ohrm ohrm;
-
-    @Autowired
-    TestData testData;
 
     public OhrmSteps() {
 
@@ -63,9 +62,6 @@ public class OhrmSteps implements En {
 
         Then("the blood type is updated", () -> {
             ohrm.ui.waitForPageToLoad();
-            reporter.assertThat("Check if blood type is not ".concat(testData.bloodType),
-                    ohrm.myInfo.getBloodType(),
-                    Matchers.not(Matchers.equalTo(testData.bloodType)));
             reporter.assertThat("Check if blood type is ".concat(testData.bloodType),
                     ohrm.myInfo.getBloodType(),
                     Matchers.equalTo(testData.bloodType));
@@ -75,5 +71,10 @@ public class OhrmSteps implements En {
                 reporter.assertThat("Check if message exists",
                         ohrm.buzz.waitToBePresent(message),
                         true));
+
+        Then("an error is simulated", () ->
+                reporter.assertThat("Check if 1 equals 2",
+                        1,
+                        Matchers.equalTo(2)));
     }
 }

@@ -21,12 +21,11 @@ public class MetaSteps implements En {
 
     @Autowired
     AllureReporter reporter;
+    @Autowired
+    TestData testData;
 
     @Autowired
     Ohrm ohrm;
-
-    @Autowired
-    TestData testData;
 
     public MetaSteps() {
 
