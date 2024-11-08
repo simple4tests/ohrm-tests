@@ -26,7 +26,7 @@
 
         <lombok.version>1.18.34</lombok.version>
 
-        <webdriver-overload.version>3.0.6-SNAPSHOT</webdriver-overload.version>
+        <webdriver-overload.version>3.0.6</webdriver-overload.version>
 
         <serenity.version>4.2.7</serenity.version>
         <cucumber.version>7.20.1</cucumber.version>
