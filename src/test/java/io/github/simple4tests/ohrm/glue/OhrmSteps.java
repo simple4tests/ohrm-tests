@@ -34,13 +34,16 @@ public class OhrmSteps implements En {
             ohrm.myInfo.setCustomFields(bloodType);
         });
 
-        When("(the user )updates his personal details with following data", (PersonalDetailsData personalDetails) ->
-                ohrm.myInfo.setPersonalDetails(personalDetails));
+        When("(the user )updates his personal details with following data", (PersonalDetailsData personalDetails) -> {
+            testData.firstName = personalDetails.firstName;
+            ohrm.myInfo.setPersonalDetails(personalDetails);
+        });
 
         When("(the user )updates his personal details with the data {string}", (String inputSource) -> {
             PersonalDetailsData personalDetails = Yml.loadAs(
                     String.format("input/personal-details-%s.yml", inputSource),
                     PersonalDetailsData.class);
+            testData.firstName = personalDetails.firstName;
             ohrm.myInfo.setPersonalDetails(personalDetails);
         });
 
@@ -59,6 +62,11 @@ public class OhrmSteps implements En {
                 reporter.assertThat("Check if page title is ".concat(title),
                         ohrm.getTitle(),
                         Matchers.equalTo(title)));
+
+        Then("the first name is updated", () ->
+                reporter.assertThat("Check if first name is ".concat(testData.firstName),
+                        ohrm.myInfo.waitFirstNameToBe(testData.firstName),
+                        true));
 
         Then("the blood type is updated", () -> {
             ohrm.ui.waitForPageToLoad();
