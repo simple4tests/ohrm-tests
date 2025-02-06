@@ -22,15 +22,15 @@
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
 
-        <logback.version>1.5.12</logback.version>
+        <logback.version>1.5.16</logback.version>
 
-        <lombok.version>1.18.34</lombok.version>
+        <lombok.version>1.18.36</lombok.version>
 
-        <webdriver-overload.version>3.0.6</webdriver-overload.version>
-        <spring-boot.version>3.3.5</spring-boot.version>
+        <webdriver-overload.version>3.0.7</webdriver-overload.version>
+        <spring-boot.version>3.4.2</spring-boot.version>
         <cucumber.version>7.20.1</cucumber.version>
-        <junit-platform-suite.version>1.11.3</junit-platform-suite.version>
-        <junit-engine.version>5.11.3</junit-engine.version>
+        <junit-platform-suite.version>1.11.4</junit-platform-suite.version>
+        <junit-engine.version>5.11.4</junit-engine.version>
         <allure.version>2.29.0</allure.version>
         <aspectj.version>1.9.22.1</aspectj.version>
     </properties>
@@ -180,7 +180,7 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.12.0</version>
+                <version>2.15.2</version>
                 <executions>
                     <execution>
                         <id>allure-reports</id>
