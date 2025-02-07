@@ -69,7 +69,7 @@ public class MetaSteps implements En {
     @DataTableType
     public PersonalDetailsData personalDetailsDataEntry(Map<String, String> entry) {
         PersonalDetailsData personalDetails = new PersonalDetailsData();
-        personalDetails.nickName = entry.get("nickName");
+        personalDetails.firstName = entry.get("firstName");
         personalDetails.smoker = Boolean.parseBoolean(entry.get("smoker"));
         personalDetails.militaryService = entry.get("militaryService");
         return personalDetails;
