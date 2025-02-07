@@ -9,7 +9,7 @@ Feature: Orange-HRM: Personal Details
     Given a user connected to the OrangeHRM site
     When the user opens menu MY_INFO
     And the user updates his personal details with following data
-      | firstName         | smoker | militaryService |
+      | firstName        | smoker | militaryService |
       | simple for tests | false  | 9876543210      |
     Then the first name is updated
 
