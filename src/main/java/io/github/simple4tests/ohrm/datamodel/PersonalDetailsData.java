@@ -1,8 +1,8 @@
 package io.github.simple4tests.ohrm.datamodel;
 
-import lombok.Data;
+//import lombok.Data;
 
-@Data
+//@Data
 public class PersonalDetailsData {
 
     public String firstName;

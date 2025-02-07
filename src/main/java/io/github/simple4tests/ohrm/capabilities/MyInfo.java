@@ -22,6 +22,7 @@ public class MyInfo extends Ohrm {
 //        ui.setSelected(SMOKER, personalDetails.smoker);
 //        ui.clearNext(true).sendKeys(MILITARY_SERVICE, personalDetails.militaryService);
         ui.click(SAVE_PERSONAL_DETAILS);
+        ui.waitForPageToLoad();
         reporter.endStep();
     }
 
@@ -34,6 +35,10 @@ public class MyInfo extends Ohrm {
 
     public String getFirstName() {
         return ui.get(FIRST_NAME, "value").toString();
+    }
+
+    public boolean waitFirstNameToBe(String firstName) {
+        return ui.wait.ignoreTimeoutException().until(input -> firstName.equals(getFirstName()));
     }
 
     public String getBloodType() {
