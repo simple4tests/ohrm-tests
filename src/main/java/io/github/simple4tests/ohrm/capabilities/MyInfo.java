@@ -34,7 +34,7 @@ public class MyInfo extends Ohrm {
     }
 
     public String getFirstName() {
-        return ui.getElement(FIRST_NAME).getAttribute("value");
+        return ui.get(FIRST_NAME, "value").toString();
     }
 
     public boolean waitFirstNameToBe(String firstName) {
