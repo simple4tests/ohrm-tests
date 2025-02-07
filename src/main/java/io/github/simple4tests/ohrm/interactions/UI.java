@@ -17,7 +17,7 @@ public class UI extends Interactions {
     }
 
     public void waitForPageToLoad() {
-        sleep(200);
+        sleep(50);
         wait.ignoreTimeoutException().until(input -> isPresent(CONTENT), Duration.ofMillis(1000), Duration.ofMillis(100));
         wait.ignoreTimeoutException().until(input -> isPresent(SPINNER), Duration.ofMillis(1000), Duration.ofMillis(100));
         waitToBeAbsent(SPINNER);

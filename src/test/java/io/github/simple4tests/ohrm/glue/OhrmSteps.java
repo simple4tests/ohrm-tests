@@ -63,12 +63,10 @@ public class OhrmSteps implements En {
                         ohrm.getTitle(),
                         Matchers.equalTo(title)));
 
-        Then("the first name is updated", () -> {
-            ohrm.ui.waitForPageToLoad();
-            reporter.assertThat("Check if first name is ".concat(testData.firstName),
-                    ohrm.myInfo.getFirstName(),
-                    Matchers.equalTo(testData.firstName));
-        });
+        Then("the first name is updated", () ->
+                reporter.assertThat("Check if first name is ".concat(testData.firstName),
+                        ohrm.myInfo.waitFirstNameToBe(testData.firstName),
+                        true));
 
         Then("the blood type is updated", () -> {
             ohrm.ui.waitForPageToLoad();
