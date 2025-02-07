@@ -9,5 +9,5 @@ Feature: Orange-HRM: Custom fields
     Given a user connected to the OrangeHRM site
     When the user opens menu MY_INFO
     And update his blood type with the value 'AB+'
-    Then an error is simulated
+#    Then an error is simulated
     Then the blood type is updated

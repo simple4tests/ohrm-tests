@@ -5,11 +5,11 @@ import lombok.Data;
 @Data
 public class PersonalDetailsData {
 
-    public String nickName;
+    public String firstName;
     public boolean smoker;
     public String militaryService;
 
 //    public String toReadableString() {
-//        return String.format("nickName: %s\nsmoker: %s\nmilitaryService: %s", nickName, smoker, militaryService);
+//        return String.format("firstName: %s\nsmoker: %s\nmilitaryService: %s", firstName, smoker, militaryService);
 //    }
 }
