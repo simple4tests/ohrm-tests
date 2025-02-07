@@ -10,6 +10,7 @@ import org.junit.platform.suite.api.Suite;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = Constants.PLUGIN_PUBLISH_QUIET_PROPERTY_NAME, value = "true")
+@ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "io.github.simple4tests.ohrm.glue")
 @ConfigurationParameter(
         key = Constants.PLUGIN_PROPERTY_NAME,
         value = "pretty,json:target/cucumber.json,html:target/site/cucumber/index.html")

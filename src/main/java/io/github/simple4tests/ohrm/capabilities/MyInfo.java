@@ -5,7 +5,7 @@ import io.github.simple4tests.ohrm.datamodel.PersonalDetailsData;
 
 public class MyInfo extends Ohrm {
 
-    public static final String NICK_NAME = "//input[@name='firstName']";
+    public static final String FIRST_NAME = "//input[@name='firstName']";
 
     public static final String SMOKER = "//div[contains(@class,'oxd-input-group') and .//label[text()='Smoker']]";
     public static final String MILITARY_SERVICE = "//div[contains(@class,'oxd-input-group') and .//label[text()='Military Service']]//input";
@@ -18,10 +18,11 @@ public class MyInfo extends Ohrm {
     public void setPersonalDetails(PersonalDetailsData personalDetails) {
         reporter.startStep("Set personal details");
         reporter.reportData(personalDetails.toString());
-        ui.click(NICK_NAME).clearNext(true).sendKeys(NICK_NAME, personalDetails.nickName);
+        ui.click(FIRST_NAME).clearNext(true).sendKeys(FIRST_NAME, personalDetails.firstName);
 //        ui.setSelected(SMOKER, personalDetails.smoker);
 //        ui.clearNext(true).sendKeys(MILITARY_SERVICE, personalDetails.militaryService);
         ui.click(SAVE_PERSONAL_DETAILS);
+        ui.waitForPageToLoad();
         reporter.endStep();
     }
 
@@ -30,6 +31,14 @@ public class MyInfo extends Ohrm {
         ui.selectByVisibleText(BLOOD_TYPE, bloodType);
         ui.click(SAVE_CUSTOM_FIELDS);
         reporter.endStep();
+    }
+
+    public String getFirstName() {
+        return ui.get(FIRST_NAME, "value").toString();
+    }
+
+    public boolean waitFirstNameToBe(String firstName) {
+        return ui.wait.ignoreTimeoutException().until(input -> firstName.equals(getFirstName()));
     }
 
     public String getBloodType() {
