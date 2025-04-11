@@ -1,9 +1,10 @@
-package io.github.simple4tests.ohrm.context;
+package io.github.simple4tests.ohrm.glue;
 
 import io.cucumber.spring.CucumberContextConfiguration;
+import io.github.simple4tests.ohrm.context.TestConfig;
 import org.springframework.test.context.ContextConfiguration;
 
-@ContextConfiguration(classes = TestConfig.class)
 @CucumberContextConfiguration
+@ContextConfiguration(classes = TestConfig.class)
 public class CucumberSpringConfiguration {
 }
