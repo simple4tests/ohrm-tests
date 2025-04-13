@@ -28,10 +28,12 @@
 
         <webdriver-overload.version>3.0.8</webdriver-overload.version>
         <spring-boot.version>3.4.4</spring-boot.version>
-        <cucumber.version>7.20.1</cucumber.version>
-        <junit-platform-suite.version>1.11.4</junit-platform-suite.version>
-        <junit-engine.version>5.11.4</junit-engine.version>
-        <allure.version>2.29.0</allure.version>
+        <cucumber.version>7.22.0</cucumber.version>
+        <junit-platform.version>1.12.1</junit-platform.version>
+        <junit-engine.version>5.12.1</junit-engine.version>
+        <allure.version>2.29.1</allure.version>
+        <allure-report.version>2.29.0</allure-report.version>
+        <allure-maven.version>2.15.2</allure-maven.version>
 <!--        <aspectj.version>1.9.22.1</aspectj.version>-->
     </properties>
 
@@ -63,8 +65,14 @@
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <version>${junit-platform-suite.version}</version>
+            <version>${junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -180,7 +188,7 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.15.2</version>
+                <version>${allure-maven.version}</version>
                 <executions>
                     <execution>
                         <id>allure-reports</id>
@@ -191,7 +199,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <reportVersion>${allure.version}</reportVersion>
+                    <reportVersion>${allure-report.version}</reportVersion>
                 </configuration>
             </plugin>
         </plugins>
