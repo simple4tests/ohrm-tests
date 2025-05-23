@@ -19,20 +19,20 @@
         <project.encoding>UTF-8</project.encoding>
 
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
 
         <logback.version>1.5.18</logback.version>
 
         <lombok.version>1.18.38</lombok.version>
 
-        <webdriver-overload.version>3.0.8</webdriver-overload.version>
-        <spring-boot.version>3.4.4</spring-boot.version>
-        <cucumber.version>7.22.0</cucumber.version>
-        <junit-platform.version>1.12.1</junit-platform.version>
-        <junit-engine.version>5.12.1</junit-engine.version>
+        <webdriver-overload.version>3.0.9</webdriver-overload.version>
+        <spring-boot.version>3.5.0</spring-boot.version>
+        <cucumber.version>7.22.2</cucumber.version>
+        <junit-platform.version>1.12.2</junit-platform.version>
+        <junit-engine.version>5.12.2</junit-engine.version>
         <allure.version>2.29.1</allure.version>
-        <allure-report.version>2.29.0</allure-report.version>
+        <allure-commandline.version>2.34.0</allure-commandline.version>
         <allure-maven.version>2.15.2</allure-maven.version>
 <!--        <aspectj.version>1.9.22.1</aspectj.version>-->
     </properties>
@@ -199,7 +199,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <reportVersion>${allure-report.version}</reportVersion>
+                    <reportVersion>${allure-commandline.version}</reportVersion>
                 </configuration>
             </plugin>
         </plugins>
