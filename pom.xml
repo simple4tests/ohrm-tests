@@ -26,12 +26,12 @@
 
         <lombok.version>1.18.38</lombok.version>
 
-        <webdriver-overload.version>3.0.8</webdriver-overload.version>
+        <webdriver-overload.version>3.0.9</webdriver-overload.version>
 
-        <serenity.version>4.2.17</serenity.version>
-        <cucumber.version>7.20.1</cucumber.version>
-        <junit-platform-suite.version>1.12.1</junit-platform-suite.version>
-        <junit-engine.version>5.12.1</junit-engine.version>
+        <serenity.version>4.2.30</serenity.version>
+        <cucumber.version>7.22.2</cucumber.version>
+        <junit-platform-suite.version>1.12.2</junit-platform-suite.version>
+        <junit-engine.version>5.12.2</junit-engine.version>
     </properties>
 
     <dependencies>
