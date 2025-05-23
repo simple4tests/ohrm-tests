@@ -19,8 +19,8 @@
         <project.encoding>UTF-8</project.encoding>
 
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
 
         <logback.version>1.5.18</logback.version>
 
@@ -66,7 +66,7 @@
             <version>${junit-platform-suite.version}</version>
             <scope>test</scope>
         </dependency>
-<!--        &lt;!&ndash;        Junit-vintage is required in order to get Scenario Outline working    &ndash;&gt;-->
+<!--        Junit-vintage is required in order to get Scenario Outline working-->
         <dependency>
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
@@ -91,12 +91,12 @@
             <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>net.serenity-bdd</groupId>-->
-<!--            <artifactId>serenity-junit5</artifactId>-->
-<!--            <version>${serenity.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit5</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
