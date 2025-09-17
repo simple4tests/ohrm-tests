@@ -19,21 +19,21 @@
         <project.encoding>UTF-8</project.encoding>
 
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
 
         <logback.version>1.5.18</logback.version>
 
-        <lombok.version>1.18.38</lombok.version>
+        <lombok.version>1.18.40</lombok.version>
 
-        <webdriver-overload.version>3.0.9</webdriver-overload.version>
-        <spring-boot.version>3.5.0</spring-boot.version>
-        <cucumber.version>7.23.0</cucumber.version>
-        <junit-platform.version>1.13.0</junit-platform.version>
-        <junit-engine.version>5.13.0</junit-engine.version>
-        <allure.version>2.29.1</allure.version>
-        <allure-commandline.version>2.34.0</allure-commandline.version>
-        <allure-maven.version>2.15.2</allure-maven.version>
+        <webdriver-overload.version>3.0.10</webdriver-overload.version>
+        <spring-boot.version>3.5.5</spring-boot.version>
+        <cucumber.version>7.28.2</cucumber.version>
+        <junit-platform.version>1.13.4</junit-platform.version>
+        <junit-engine.version>5.13.4</junit-engine.version>
+        <allure.version>2.30.0</allure.version>
+        <allure-commandline.version>2.35.1</allure-commandline.version>
+        <allure-maven.version>2.16.1</allure-maven.version>
 <!--        <aspectj.version>1.9.22.1</aspectj.version>-->
     </properties>
 
