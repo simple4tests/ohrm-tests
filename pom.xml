@@ -22,16 +22,16 @@
         <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
 
-        <logback.version>1.5.20</logback.version>
+        <logback.version>1.5.23</logback.version>
 
         <lombok.version>1.18.42</lombok.version>
 
-        <webdriver-overload.version>3.1.0</webdriver-overload.version>
+        <webdriver-overload.version>3.2.0</webdriver-overload.version>
 
-        <serenity.version>4.3.2</serenity.version>
-        <cucumber.version>7.31.0</cucumber.version>
-        <junit-platform-suite.version>1.13.4</junit-platform-suite.version>
-        <junit-engine.version>5.13.4</junit-engine.version>
+        <serenity.version>5.0.2</serenity.version>
+        <cucumber.version>7.33.0</cucumber.version>
+        <junit-platform-suite.version>6.0.1</junit-platform-suite.version>
+        <junit-engine.version>6.0.1</junit-engine.version>
     </properties>
 
     <dependencies>

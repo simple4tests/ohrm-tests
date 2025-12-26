@@ -1,7 +1,10 @@
 package io.github.simple4tests.ohrm;
 
 import io.cucumber.core.options.Constants;
-import org.junit.platform.suite.api.*;
+import org.junit.platform.suite.api.ConfigurationParameter;
+import org.junit.platform.suite.api.IncludeEngines;
+import org.junit.platform.suite.api.SelectPackages;
+import org.junit.platform.suite.api.Suite;
 
 @Suite
 @IncludeEngines("cucumber")
@@ -11,7 +14,7 @@ import org.junit.platform.suite.api.*;
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "io.github.simple4tests.ohrm.glue")
 @ConfigurationParameter(
         key = Constants.PLUGIN_PROPERTY_NAME,
-        value = "pretty,json:target/cucumber.json,io.cucumber.core.plugin.SerenityReporter")
+        value = "pretty,json:target/cucumber.json,net.serenitybdd.cucumber.core.plugin.SerenityReporter")
 //@ConfigurationParameter(key = "cucumber.execution.parallel.enabled", value = "false")
 //@ConfigurationParameter(key = "cucumber.execution.parallel.config.strategy", value = "fixed")
 //@ConfigurationParameter(key = "cucumber.execution.parallel.config.fixed.parallelism", value = "3")
