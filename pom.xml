@@ -24,11 +24,9 @@
 
         <logback.version>1.5.20</logback.version>
 
-        <lombok.version>1.18.42</lombok.version>
-
-        <webdriver-overload.version>3.1.0</webdriver-overload.version>
-        <spring-boot.version>3.5.7</spring-boot.version>
-        <cucumber.version>7.31.0</cucumber.version>
+        <webdriver-overload.version>3.2.0</webdriver-overload.version>
+        <spring-boot.version>4.0.1</spring-boot.version>
+        <cucumber.version>7.33.0</cucumber.version>
         <junit.version>6.0.1</junit.version>
     </properties>
 
@@ -38,12 +36,6 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
             <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
         </dependency>
 
         <dependency>

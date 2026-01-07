@@ -15,6 +15,6 @@ Feature: Orange-HRM: Custom fields
   Scenario: Update blood type with error
     Given a user connected to the OrangeHRM site
     When the user opens menu MY_INFO
-    And update his blood type with the value 'AB+'
     Then an error is simulated
+    When the user update his blood type with the value 'AB+'
     Then the blood type is updated
