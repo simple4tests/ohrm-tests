@@ -17,7 +17,7 @@ public class MyInfo extends Ohrm {
 
     public void setPersonalDetails(PersonalDetailsData personalDetails) {
         reporter.startStep("Set personal details");
-        reporter.reportData(personalDetails.toString());
+        reporter.reportData(personalDetails.toReadableString());
         ui.click(FIRST_NAME).clearNext(true).sendKeys(FIRST_NAME, personalDetails.firstName);
 //        ui.setSelected(SMOKER, personalDetails.smoker);
 //        ui.clearNext(true).sendKeys(MILITARY_SERVICE, personalDetails.militaryService);
