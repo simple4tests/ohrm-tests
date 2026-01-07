@@ -24,12 +24,12 @@
 
         <logback.version>1.5.23</logback.version>
 
-        <webdriver-overload.version>3.2.0</webdriver-overload.version>
+        <webdriver-overload.version>3.2.1</webdriver-overload.version>
 
-        <serenity.version>5.0.2</serenity.version>
+        <serenity.version>5.0.3</serenity.version>
         <cucumber.version>7.33.0</cucumber.version>
-        <junit-platform-suite.version>6.0.1</junit-platform-suite.version>
-        <junit-engine.version>6.0.1</junit-engine.version>
+        <junit-platform-suite.version>6.0.2</junit-platform-suite.version>
+        <junit-engine.version>6.0.2</junit-engine.version>
     </properties>
 
     <dependencies>
