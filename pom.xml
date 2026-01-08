@@ -26,7 +26,7 @@
 
         <webdriver-overload.version>3.2.1</webdriver-overload.version>
 
-        <serenity.version>5.0.3</serenity.version>
+        <serenity.version>5.1.0</serenity.version>
         <cucumber.version>7.33.0</cucumber.version>
         <junit-platform-suite.version>6.0.2</junit-platform-suite.version>
         <junit-engine.version>6.0.2</junit-engine.version>
