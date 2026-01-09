@@ -2,7 +2,7 @@
 Feature: Orange-HRM: Buzz
   The scenarios below verify the following functionalities:
   - Add multiple messages
-  - Add message
+  - Add a single message
 #  - Reply to a message
 
   Scenario: Add multiple messages
@@ -19,7 +19,7 @@ Feature: Orange-HRM: Buzz
       | This is message num. 3 |
     Then the post 'This is message num. 3' exists
 
-  Scenario Outline: Add message
+  Scenario Outline: Add a single message
     Given a user connected to the OrangeHRM site
     When the user opens menu BUZZ
     And adds message '<Message>'
