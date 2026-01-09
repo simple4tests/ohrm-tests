@@ -5,10 +5,8 @@ Feature: Orange-HRM: Check errors
 
   @ERROR
   Scenario: Simulate an error
-    Given going to goog site
-    When running step with screenshot
-    When running step without screenshot
+    Given browse to goog site
     Then simulate an error
-    When running step without screenshot
-    When perform screenshot
-    When running step without screenshot
+    When browse with screenshot
+    When browse with screenshots
+    When browse without screenshot
