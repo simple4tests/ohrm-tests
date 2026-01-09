@@ -23,9 +23,9 @@
         <maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
 
         <slf4j.version>2.0.17</slf4j.version>
-        <webdriver-overload.version>3.2.0</webdriver-overload.version>
+        <webdriver-overload.version>3.2.1</webdriver-overload.version>
         <cucumber.version>7.33.0</cucumber.version>
-        <junit.version>6.0.1</junit.version>
+        <junit.version>6.0.2</junit.version>
     </properties>
 
     <dependencies>
