@@ -28,8 +28,7 @@
 
         <serenity.version>5.1.0</serenity.version>
         <cucumber.version>7.33.0</cucumber.version>
-        <junit-platform-suite.version>6.0.2</junit-platform-suite.version>
-        <junit-engine.version>6.0.2</junit-engine.version>
+        <junit.version>6.0.2</junit.version>
     </properties>
 
     <dependencies>
@@ -49,20 +48,20 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-engine.version}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
-            <version>${junit-platform-suite.version}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 <!--        Junit-vintage is required in order to get Scenario Outline working-->
         <dependency>
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
-            <version>${junit-engine.version}</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

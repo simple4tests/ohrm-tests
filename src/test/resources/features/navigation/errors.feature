@@ -1,10 +1,10 @@
-@ALL @MY_INFO @ERRORS
-Feature: Orange-HRM: Check errors
+@ALL @NAVIGATION @ERRORS
+Feature: Orange-HRM: Browsing and errors
   The scenarios below verify the following functionalities:
-  - Simulate an error
+  - Browse and simulate an error
 
   @ERROR
-  Scenario: Simulate an error
+  Scenario: Browse and simulate an error
     Given browse to goog site
     Then simulate an error
     When browse with screenshot
