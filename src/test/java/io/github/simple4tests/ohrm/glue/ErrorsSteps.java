@@ -17,6 +17,7 @@ public class ErrorsSteps implements En {
     public ErrorsSteps() {
 
         Given("browse to goog site", () -> {
+            reporter.reportScreenshot();
             reporter.startStep("navigate to goog site step");
             ohrm.ui.driver.navigate().to("http://www.google.com");
             ohrm.ui.sleep(1000);

@@ -24,7 +24,7 @@
 
         <logback.version>1.5.23</logback.version>
 
-        <webdriver-overload.version>3.2.1</webdriver-overload.version>
+        <webdriver-overload.version>3.2.2</webdriver-overload.version>
 
         <serenity.version>5.1.0</serenity.version>
         <cucumber.version>7.33.0</cucumber.version>
