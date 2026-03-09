@@ -20,9 +20,10 @@ public class ErrorsSteps implements En {
         this.testData = config.testData;
 
         Given("browse to goog site", () -> {
+            reporter.reportScreenshot();
             reporter.startStep("navigate to goog site step");
             ohrm.ui.driver.navigate().to("http://www.google.com");
-            ohrm.ui.sleep(1000);
+            ohrm.ui.sleep(3000);
             reporter.endStep();
         });
 
@@ -38,10 +39,10 @@ public class ErrorsSteps implements En {
         });
 
         When("browse with screenshots", () -> {
-            reporter.startStep("screenshots step");
+            reporter.startStep("simple screenshot step");
             reporter.reportScreenshot();
             reporter.endStep();
-            reporter.startStep("my double screenshot");
+            reporter.startStep("double screenshot");
             reporter.reportScreenshot();
             reporter.reportScreenshot();
             reporter.endStep();
