@@ -3,7 +3,6 @@ package io.github.simple4tests.ohrm.glue;
 import io.cucumber.java8.En;
 import io.github.simple4tests.ohrm.Ohrm;
 import io.github.simple4tests.webdriver.reporters.AllureReporter;
-import io.github.simple4tests.webdriver.reporters.CucumberJava8Reporter;
 import org.hamcrest.Matchers;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,9 +17,10 @@ public class ErrorsSteps implements En {
     public ErrorsSteps() {
 
         Given("browse to goog site", () -> {
+            reporter.reportScreenshot();
             reporter.startStep("navigate to goog site step");
             ohrm.ui.driver.navigate().to("http://www.google.com");
-            ohrm.ui.sleep(1000);
+            ohrm.ui.sleep(3000);
             reporter.endStep();
         });
 
@@ -36,10 +36,10 @@ public class ErrorsSteps implements En {
         });
 
         When("browse with screenshots", () -> {
-            reporter.startStep("screenshots step");
+            reporter.startStep("simple screenshot step");
             reporter.reportScreenshot();
             reporter.endStep();
-            reporter.startStep("my double screenshot");
+            reporter.startStep("double screenshot");
             reporter.reportScreenshot();
             reporter.reportScreenshot();
             reporter.endStep();
