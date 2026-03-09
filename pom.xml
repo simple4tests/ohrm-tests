@@ -18,17 +18,17 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.encoding>UTF-8</project.encoding>
 
-        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.5.5</maven-failsafe-plugin.version>
 
-        <logback.version>1.5.23</logback.version>
+        <logback.version>1.5.32</logback.version>
 
-        <webdriver-overload.version>3.2.2</webdriver-overload.version>
+        <webdriver-overload.version>3.2.3</webdriver-overload.version>
 
-        <serenity.version>5.1.0</serenity.version>
-        <cucumber.version>7.33.0</cucumber.version>
-        <junit.version>6.0.2</junit.version>
+        <serenity.version>5.3.3</serenity.version>
+        <cucumber.version>7.34.3</cucumber.version>
+        <junit.version>6.0.3</junit.version>
     </properties>
 
     <dependencies>
