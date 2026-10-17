@@ -11,7 +11,7 @@
     <description>OHRM Test Automation Demo using WebDriver-Overload by Simple4Tests</description>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
@@ -19,16 +19,17 @@
         <project.encoding>UTF-8</project.encoding>
 
         <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>3.5.6</maven-failsafe-plugin.version>
+        <maven-surefire-plugin.version>3.6.0</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.6.0</maven-failsafe-plugin.version>
 
-        <logback.version>1.6.3</logback.version>
+        <logback.version>1.6.5</logback.version>
 
-        <webdriver-overload.version>3.2.5</webdriver-overload.version>
+        <webdriver-overload.version>3.3.0</webdriver-overload.version>
 
-        <serenity.version>5.3.11</serenity.version>
-        <cucumber.version>7.34.9</cucumber.version>
+        <serenity.version>5.4.1</serenity.version>
+        <cucumber.version>8.0.4</cucumber.version>
         <junit.version>6.1.3</junit.version>
+        <jackson.version>3.2.3</jackson.version>
     </properties>
 
     <dependencies>
@@ -57,7 +58,7 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-<!--        Junit-vintage is required in order to get Scenario Outline working-->
+        <!--        Junit-vintage is required in order to get Scenario Outline working-->
         <dependency>
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
@@ -88,6 +89,11 @@
             <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -113,6 +119,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+                    <argLine>-XX:+EnableDynamicAgentLoading</argLine>
                     <skip>false</skip>
                     <skipTests>false</skipTests>
                     <includes>
@@ -137,6 +144,7 @@
                     <argLine>
                         -Xmx1024m
                         -Dfile.encoding=UTF-8
+                        -XX:+EnableDynamicAgentLoading
                     </argLine>
                 </configuration>
                 <executions>
